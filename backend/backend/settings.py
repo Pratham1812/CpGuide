@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+  }
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+# SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,8 +45,13 @@ INSTALLED_APPS = [
     'user',
     'rest_framework',
     'corsheaders',
+    'rest_framework_simplejwt'
 ]
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
