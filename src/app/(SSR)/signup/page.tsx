@@ -6,9 +6,9 @@ import type { NextRequest } from 'next/server'
 import { useRouter } from 'next/navigation'
 import { Container,Form,Button } from 'react-bootstrap'
 // import register_usr from './register_usr';?
-export default async function SignUp(request : NextRequest){
+export default async function SignUp(){
     const router = useRouter()
-
+    
     const register_usr = async(event:any)=>{
         event.preventDefault()
         const data = {

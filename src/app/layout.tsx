@@ -1,8 +1,10 @@
+"use client"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Container, SSRProvider } from '@/components/bootstrap';
-import NavBar from './NavBar';
+import { CookiesProvider } from "react-cookie";
+import NavBar from '@/components/NavBar'
 import { Toaster } from 'react-hot-toast';
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SSRProvider>
+        <CookiesProvider>        <SSRProvider>
 <NavBar/>
 <Toaster/>
           <main>
@@ -29,6 +31,8 @@ export default function RootLayout({
       </Container>
 </main>
       </SSRProvider>
+      </CookiesProvider>
+
       </body>
     </html>
   )
