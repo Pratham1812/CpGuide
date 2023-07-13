@@ -1,6 +1,5 @@
 "use client"
 import { Form, Button } from 'react-bootstrap'
-import { signJWT } from '@/lib/token'
 import { useRouter } from 'next/navigation'
 import { NextRequest, NextResponse } from 'next/server'
 import { useCookies } from 'react-cookie'
