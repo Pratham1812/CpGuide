@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Card, Button, Spinner, Container } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
+import { Accordion } from 'react-bootstrap';
 import { toast } from 'react-hot-toast';
 
 interface UserData {
@@ -68,8 +69,10 @@ const ProfilePage = () => {
   //     setLoading(false);
   //   }
   // };
+  const [visible, setVisible] = useState(false)
 
   return (
+    <div>
     <Card className="m-4 p-4 bg-light border border-primary rounded">
       <Card.Body>
         <Card.Title className="mb-4 text-primary fw-bold display-4">
@@ -120,13 +123,22 @@ const ProfilePage = () => {
                   
                 </ul>
               </Card>
+              
+
+
             ) : (
               <p className="text-danger">No profile data available.</p>
             )}
           </Container>
+          
         )}
       </Card.Body>
     </Card>
+
+    
+
+    </div>
+    
   );
 };
 
