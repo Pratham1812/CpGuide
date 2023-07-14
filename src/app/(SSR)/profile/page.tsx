@@ -52,30 +52,6 @@ const ProfilePage = () => {
  
 }, []);
 
-  // const fetchProfileData = async () => {
-  //   const endpoint = 'http://127.0.0.1:8000/api/auth/profile';
-  //   const options = {
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: 'Bearer ' + cookies['token'],
-  //     },
-  //   };
-
-  //   try {
-      
-
-  //     if (response.ok) {
-  //       setUserData(data);
-  //     } else {
-  //       toast.error('Error fetching profile data');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error fetching profile data:', error);
-  //     toast.error('Error fetching profile data');
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
   const accordionItems = [
     {
       title: 'Item #1',
@@ -110,11 +86,6 @@ const ProfilePage = () => {
       ),
     },
   ];
-
-
-
-
-
 
 
   return (
