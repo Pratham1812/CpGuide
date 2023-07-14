@@ -1,11 +1,10 @@
-"use client";
-import { useEffect, useState } from "react";
-import { Card, Button, Spinner, Container, Collapse } from "react-bootstrap";
-import { useCookies } from "react-cookie";
-import Accordion from "../../../components/Accordion";
-
-import { toast } from "react-hot-toast";
-import { FaAngleDown, FaAngleRight } from "react-icons/fa";
+"use client"
+import { useEffect, useState } from 'react';
+import { Card, Button, Spinner, Container, Collapse } from 'react-bootstrap';
+import { useCookies } from 'react-cookie';
+import { toast } from 'react-hot-toast';
+import { FaAngleDown, FaAngleRight } from 'react-icons/fa';
+import data from './data.json';
 
 interface UserData {
   fname: string;
@@ -14,14 +13,28 @@ interface UserData {
   userId: string;
 }
 
-const ProfilePage = () => {
-  const [cookies] = useCookies(["token"]);
+interface UrlData {
+  topic: string;
+  link: string;
+  status: string;
+}
+
+interface StepData {
+  heading: string;
+  sub_headings: string[];
+  urls: UrlData[][];
+}
+
+const ProfilePage: React.FC = () => {
+  const [cookies] = useCookies(['token']);
   const [username, setUserName] = useState<string | null>(null);
   const [email, setUserEmail] = useState<string | null>(null);
   const [fname, setUserFname] = useState<string | null>(null);
   const [lname, setUserLname] = useState<string | null>(null);
   const [outerOpen, setOuterOpen] = useState<boolean>(false);
   const [innerOpen, setInnerOpen] = useState<boolean>(false);
+  const [stepData, setStepData] = useState<StepData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const toggleOuterCollapse = () => {
     setOuterOpen(!outerOpen);
@@ -31,15 +44,13 @@ const ProfilePage = () => {
     setInnerOpen(!innerOpen);
   };
 
-  const [loading, setLoading] = useState<boolean>(true);
-
   useEffect(() => {
     const fetchProfileData = async () => {
-      const endpoint = "http://127.0.0.1:8000/api/auth/profile";
+      const endpoint = 'http://127.0.0.1:8000/api/auth/profile';
       const options = {
-        method: "GET",
+        method: 'GET',
         headers: {
-          Authorization: "Bearer " + cookies["token"],
+          Authorization: 'Bearer ' + cookies['token'],
         },
       };
 
@@ -54,11 +65,11 @@ const ProfilePage = () => {
           setUserLname(obj.lname);
           setUserFname(obj.fname);
         } else {
-          toast.error("Error fetching profile data");
+          toast.error('Error fetching profile data');
         }
       } catch (error) {
-        console.error("Error fetching profile data:", error);
-        toast.error("Error fetching profile data");
+        console.error('Error fetching profile data:', error);
+        toast.error('Error fetching profile data');
         setUserName(null);
       } finally {
         setLoading(false);
@@ -68,39 +79,16 @@ const ProfilePage = () => {
     fetchProfileData();
   }, []);
 
-  const accordionItems = [
-    {
-      title: "Item #1",
-      content: (
-        <div>
-          <strong>This is the first item's accordion body.</strong> It is hidden
-          by default, but shown when the title is clicked. It will also be
-          hidden if the title is clicked again or when another item is clicked.
-        </div>
-      ),
-    },
-    {
-      title: "Item #2",
-      content: (
-        <div>
-          <strong>This is the second item's accordion body.</strong> It is
-          hidden by default, but shown when the title is clicked. It will also
-          be hidden if the title is clicked again or when another item is
-          clicked.
-        </div>
-      ),
-    },
-    {
-      title: "Item #3",
-      content: (
-        <div>
-          <strong>This is the third item's accordion body.</strong> It is hidden
-          by default, but shown when the title is clicked. It will also be
-          hidden if the title is clicked again or when another item is clicked.
-        </div>
-      ),
-    },
-  ];
+  useEffect(() => {
+    const parsedData: StepData[] = Object.values(data).map((step: any) => ({
+      heading: step.heading,
+      sub_headings: step.sub_headings,
+      urls: step.urls,
+    }));
+
+    setStepData(parsedData);
+    setLoading(false);
+  }, []);
 
   return (
     <Card className="m-4 p-4 bg-light border border-primary rounded">
@@ -119,109 +107,99 @@ const ProfilePage = () => {
           <Container>
             {username && (
               <Card className="border border-primary p-4 mb-4">
-                <div>
-                  <Container className="mb-4">
-                    {username ? (
-                      <Card className="border border-primary p-4">
-                        <Card.Title className="text-primary fw-bold h5 mb-4">
-                          Profile Information
-                        </Card.Title>
-                        <ul className="list-unstyled">
-                          <li>
-                            <strong className="text-primary">
-                              First Name:
-                            </strong>{" "}
-                            {fname}
-                          </li>
-                          <li>
-                            <strong className="text-primary">Last Name:</strong>{" "}
-                            {lname}
-                          </li>
-                          <li>
-                            <strong className="text-primary">Email:</strong>{" "}
-                            {email}
-                          </li>
-                        </ul>
-                      </Card>
-                    ) : (
-                      <p className="text-danger">No profile data available.</p>
-                    )}
-
-                    <Card className="border border-primary p-4">
-                      <Card.Title className="text-primary fw-bold h5 mb-4">
-                        Collapsible Widgets
-                      </Card.Title>
-                      <Button
-                        variant="link"
-                        onClick={toggleOuterCollapse}
-                        aria-expanded={outerOpen}
-                        aria-controls="outer-collapse-content"
-                        className={`d-flex align-items-center mt-3 ${
-                          outerOpen ? "rotate" : ""
-                        }`}
-                      >
-                        <span className={`me-2 ${outerOpen ? "rotate" : ""}`}>
-                          {outerOpen ? <FaAngleDown /> : <FaAngleRight />}
-                        </span>
-                        <strong>Toggle Outer Widget</strong>
-                      </Button>
-                      <Collapse in={outerOpen}>
-                        <div id="outer-collapse-content">
-                          <hr className="my-4" />
-                          <Card className="border border-primary p-4">
-                            <Card.Title className="text-primary fw-bold h5 mb-4">
-                              Inner Widget
-                            </Card.Title>
-                            <Button
-                              variant="link"
-                              onClick={toggleInnerCollapse}
-                              aria-expanded={innerOpen}
-                              aria-controls="inner-collapse-content"
-                              className={`d-flex align-items-center mt-3 ${
-                                innerOpen ? "rotate" : ""
-                              }`}
-                            >
-                              <span
-                                className={`me-2 ${innerOpen ? "rotate" : ""}`}
-                              >
-                                {innerOpen ? <FaAngleDown /> : <FaAngleRight />}
-                              </span>
-                              <strong>Toggle Inner Widget</strong>
-                            </Button>
-                            <Collapse in={innerOpen}>
-                              <div id="inner-collapse-content">
-                                <Card.Body>
-                                  <p>
-                                    This is the inner widget content. It can be
-                                    expanded or collapsed based on the button
-                                    click.
-                                  </p>
-                                </Card.Body>
-                              </div>
-                            </Collapse>
-                          </Card>
-                        </div>
-                      </Collapse>
-                    </Card>
-                  </Container>
-
-                  <Container>
-                    {username ? (
-                      <Card className="border border-primary p-4">
-                        <Card.Title className="text-primary fw-bold h5 mb-4">
-                          Coding Status
-                        </Card.Title>
-                        <ul className="list-unstyled">
-                          <Accordion items={accordionItems} />
-                        </ul>
-                      </Card>
-                    ) : (
-                      <p className="text-danger">No profile data available.</p>
-                    )}
-                  </Container>
-                </div>
+                <Card.Title className="text-primary fw-bold h5 mb-4">
+                  Profile Information
+                </Card.Title>
+                <ul className="list-unstyled">
+                  <li>
+                    <strong className="text-primary">First Name:</strong>{' '}
+                    {fname}
+                  </li>
+                  <li>
+                    <strong className="text-primary">Last Name:</strong>{' '}
+                    {lname}
+                  </li>
+                  <li>
+                    <strong className="text-primary">Email:</strong> {email}
+                  </li>
+                </ul>
               </Card>
             )}
+
+            {/* Double collapsible widgets */}
+            <Card className="border border-primary p-4">
+              <Card.Title className="text-primary fw-bold h5 mb-4">
+                Collapsible Widgets
+              </Card.Title>
+              {stepData.length > 0 &&
+                stepData.map((step: StepData, index: number) => {
+                  const subHeadings = step.sub_headings || [];
+                  const urls = step.urls || [];
+
+                  return (
+                    <Card className="border border-primary p-4 mb-4" key={index}>
+                      <Card.Title className="text-primary fw-bold h5 mb-4">
+                        {step.heading}
+                      </Card.Title>
+                      {subHeadings.length > 0 &&
+                        subHeadings.map((subHeading: string, subIndex: number) => {
+                          const urlData = urls[subIndex] || [];
+
+                          return (
+                            <div key={subIndex}>
+                              <Button
+                                variant="link"
+                                onClick={toggleOuterCollapse}
+                                aria-expanded={outerOpen}
+                                aria-controls={`outer-collapse-content-${index}-${subIndex}`}
+                                className={`d-flex align-items-center mt-3 ${
+                                  outerOpen ? 'rotate' : ''
+                                }`}
+                              >
+                                <span
+                                  className={`me-2 ${
+                                    outerOpen ? 'rotate' : ''
+                                  }`}
+                                >
+                                  {outerOpen ? <FaAngleDown /> : <FaAngleRight />}
+                                </span>
+                                <strong>{subHeading}</strong>
+                              </Button>
+                              <Collapse in={outerOpen}>
+                                <div
+                                  id={`outer-collapse-content-${index}-${subIndex}`}
+                                  className="my-3"
+                                >
+                                  {urlData.length > 0 &&
+                                    urlData.map((urlObj: UrlData, innerIndex: number) => {
+                                      const innerKey = Object.keys(urlObj)[0];
+                                      const { topic, link, status } = urlObj[innerKey];
+
+                                      return (
+                                        <Card
+                                          className="border border-primary p-4 mb-4"
+                                          key={innerIndex}
+                                        >
+                                          <Card.Title className="text-primary fw-bold h5 mb-4">
+                                            {topic}
+                                          </Card.Title>
+                                          <ul className="list-unstyled">
+                                            <li>
+                                              <a href={link}>{innerKey}</a> - {status}
+                                            </li>
+                                          </ul>
+                                        </Card>
+                                      );
+                                    })}
+                                </div>
+                              </Collapse>
+                            </div>
+                          );
+                        })}
+                    </Card>
+                  );
+                })}
+            </Card>
           </Container>
         )}
       </Card.Body>
