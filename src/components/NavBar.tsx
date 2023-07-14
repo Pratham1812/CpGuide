@@ -10,7 +10,7 @@ export default function NavBar(){
     const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
     return(
-        <Navbar bg="primary" variant="dark" expand="sm" collapseOnSelect>
+        <Navbar bg="primary" variant="dark" expand="sm" collapseOnSelect suppressHydrationWarning >
             <Container>
                 <Navbar.Brand as={Link} href="/">
                     Home
