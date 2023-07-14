@@ -18,6 +18,7 @@ const ProfilePage = () => {
   const [email, setUserEmail] = useState(null);
   const [fname, setUserFname] = useState(null);
   const [lname, setUserLname] = useState(null);
+  
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -30,45 +31,24 @@ const ProfilePage = () => {
         Authorization: 'Bearer ' + cookies['token'],
       }
     }
-
+      try{
       const response = await fetch(endpoint, options);
       const data = await response.json();
       const obj = JSON.parse(data)
-   
+     
       setUserName(obj.username)
       setUserEmail(obj.email)
       setUserLname(obj.lname)
       setUserFname(obj.fname)
       setLoading(false)
+      }catch{
+        console.log("err")
+        setUserName(null)
+      }
       }
   fetchdata()
  
 }, []);
-
-  // const fetchProfileData = async () => {
-  //   const endpoint = 'http://127.0.0.1:8000/api/auth/profile';
-  //   const options = {
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: 'Bearer ' + cookies['token'],
-  //     },
-  //   };
-
-  //   try {
-      
-
-  //     if (response.ok) {
-  //       setUserData(data);
-  //     } else {
-  //       toast.error('Error fetching profile data');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error fetching profile data:', error);
-  //     toast.error('Error fetching profile data');
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   return (
     <Card className="m-4 p-4 bg-light border border-primary rounded">
@@ -76,21 +56,7 @@ const ProfilePage = () => {
         <Card.Title className="mb-4 text-primary fw-bold display-4">
           User Profile
         </Card.Title>
-        {/* <Button
-          onClick={fetchProfileData}
-          variant="primary"
-          className="mb-3"
-          disabled={loading}
-        ></Button> */}
-          {/* {loading ? (
-            <>
-              <Spinner animation="border" size="sm" className="me-2" />
-              Loading...
-            </>
-          ) : (
-            'Fetch Profile Data'
-          )} */}
-        
+            
 
         {loading ? (
           <div className="d-flex justify-content-center my-4">
