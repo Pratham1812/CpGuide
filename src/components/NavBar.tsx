@@ -3,9 +3,11 @@
 import Link from "next/link"; //linker
 import { usePathname } from "next/navigation";
 import {Navbar,Container,Nav, NavDropdown} from "react-bootstrap";
+import { useCookies } from "react-cookie";
 //we can directly import as it is a client component
 export default function NavBar(){
     const pathName = usePathname();
+    const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
     return(
         <Navbar bg="primary" variant="dark" expand="sm" collapseOnSelect>
@@ -17,15 +19,10 @@ export default function NavBar(){
                 <Navbar.Toggle aria-controls="main-navbar"/>
                 <Navbar.Collapse id="main-navbar">
                     <Nav>
-                        <Nav.Link as ={Link} href="/signup">Signup</Nav.Link>
-                        <Nav.Link as ={Link} href="/login">Login</Nav.Link>
-                        <Nav.Link as={Link} href="/rest">Static</Nav.Link>
-                        <Nav.Link as={Link} href="/dynamic">Dynamic</Nav.Link>
-                        <NavDropdown title="Topics" id="topics-dropdown">
-                            <NavDropdown.Item as ={Link} href="/topics/fitness">Fitness</NavDropdown.Item>
-                            <NavDropdown.Item as ={Link} href="/topics/coding">Coding</NavDropdown.Item>
-                            <NavDropdown.Item as ={Link} href="/topics/health">Health</NavDropdown.Item>
-                        </NavDropdown>
+                        {!cookies['token'] && <Nav.Link as ={Link} href="/signup">Signup</Nav.Link>}
+                        {!cookies['token'] && <Nav.Link as ={Link} href="/login">Login</Nav.Link>}
+                        {cookies['token'] && <Nav.Link as ={Link} href="/logout">Logout</Nav.Link>}
+                        
                         
                     
                     </Nav>
