@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from 'react';
 import { Card, Button, Spinner } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
