@@ -8,7 +8,7 @@ import NavBar from '@/components/NavBar'
 import { Toaster } from 'react-hot-toast';
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+const metadata = {
   title: 'Image Gallery',
   description: 'First next proj',
 }

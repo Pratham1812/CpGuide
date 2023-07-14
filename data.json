@@ -1,0 +1,1146 @@
+{
+    "Step 1: Learn the basics(0/31)": [
+        {
+            "Step 1.1: Things to Know in C++/Java/Python or any language(0/9)": [
+                {
+                    "User Input / Output": "https://practice.geeksforgeeks.org/problems/search-query-auto-complete/0?category%5B%5D=Strings&amp;category%5B%5D=Strings&amp;problemStatus=unsolved&amp;difficulty%5B%5D=2&amp;page=1&amp;query=category%5B%5DStringsproblemStatusunsolveddifficulty%5B%5D2page1category%5B%5DSt"
+                },
+                {
+                    "Data Types": "https://bit.ly/3Dqmgvx"
+                },
+                {
+                    "If Else statements": "https://practice.geeksforgeeks.org/problems/java-if-else-decision-making0924/0?category%5B%5D=Java&amp;category%5B%5D=Java&amp;difficulty%5B%5D=-2&amp;page=1&amp;query=category%5B%5DJavadifficulty%5B%5D-2page1category%5B%5DJava"
+                },
+                {
+                    "Switch Statement": "https://practice.geeksforgeeks.org/problems/java-switch-case-statement3529/"
+                },
+                {
+                    "What are arrays, strings?": "NO-URL"
+                },
+                {
+                    "For loops": "NO-URL"
+                },
+                {
+                    "While loops": "https://practice.geeksforgeeks.org/problems/while-loop-printtable-java/1"
+                },
+                {
+                    "Functions (Pass by Reference and Va\u2026": "https://bit.ly/3DqE0ac"
+                },
+                {
+                    "Time Complexity [Learn Basics, and \u2026": "NO-URL"
+                }
+            ]
+        },
+        {
+            "Step 1.2: Build-up Logical Thinking(0/1)": [
+                {
+                    "Patterns": "NO-URL"
+                }
+            ]
+        },
+        {
+            "Step 1.3: Learn STL/Java-Collections or similar thing in your\n            language(0/2)": [
+                {
+                    "C++ STL": "NO-URL"
+                },
+                {
+                    "Java Collections": "NO-URL"
+                }
+            ]
+        },
+        {
+            "Step 1.4: Know Basic Maths(0/7)": [
+                {
+                    "Count Digits": "https://practice.geeksforgeeks.org/problems/count-digits5716/1"
+                },
+                {
+                    "Reverse a Number": "https://practice.geeksforgeeks.org/problems/reverse-bits3556/1"
+                },
+                {
+                    "Check Palindrome": "https://practice.geeksforgeeks.org/problems/palindrome0746/1"
+                },
+                {
+                    "GCD Or HCF": "https://practice.geeksforgeeks.org/problems/lcm-and-gcd4516/"
+                },
+                {
+                    "Armstrong Numbers": "https://practice.geeksforgeeks.org/problems/armstrong-numbers2727/"
+                },
+                {
+                    "Print all Divisors": "https://practice.geeksforgeeks.org/problems/sum-of-all-divisors-from-1-to-n4738/1"
+                },
+                {
+                    "Check for Prime": "https://practice.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1"
+                }
+            ]
+        },
+        {
+            "Step 1.5: Learn Basic Recursion(0/9)": [
+                {
+                    "Understand recursion by print somet\u2026": "https://bit.ly/3K2epHv"
+                },
+                {
+                    "Print name N times using recursion": "https://bit.ly/3y2BiWz"
+                },
+                {
+                    "Print 1 to N using recursion": "https://practice.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1"
+                },
+                {
+                    "Print N to 1 using recursion": "https://bit.ly/3LOkcBn"
+                },
+                {
+                    "Sum of first N numbers": "https://practice.geeksforgeeks.org/problems/sum-of-first-n-terms5843/"
+                },
+                {
+                    "Factorial of N numbers": "https://practice.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/0?problemType=functional&amp;difficulty%5B%5D=-1&amp;page=1&amp;query=problemTypefunctionaldifficulty%5B%5D-1page"
+                },
+                {
+                    "Reverse an array": "https://practice.geeksforgeeks.org/problems/reverse-an-array/0"
+                },
+                {
+                    "Check if a string is palindrome or \u2026": "https://practice.geeksforgeeks.org/problems/palindrome-string0817/1"
+                },
+                {
+                    "Fibonacci Number": "https://bit.ly/3QUkkk2"
+                }
+            ]
+        },
+        {
+            "Step 1.6: Learn Basic Hashing(0/3)": [
+                {
+                    "Hashing Theory": "NO-URL"
+                },
+                {
+                    "Counting frequencies of array eleme\u2026": "https://practice.geeksforgeeks.org/problems/frequency-of-array-elements-1587115620/0"
+                },
+                {
+                    "Find the highest/lowest frequency e\u2026": "https://bit.ly/3wcIHla"
+                }
+            ]
+        }
+    ],
+    "Step 2: Learn Important Sorting Techniques(0/7)": [
+        {
+            "Step 2.1: Sorting-I(0/3)": [
+                {
+                    "Selection Sort": "https://bit.ly/3ppA6YJ"
+                },
+                {
+                    "Bubble Sort": "https://bit.ly/3w6yQx8"
+                },
+                {
+                    "Insertion Sort": "https://bit.ly/3JVcqo"
+                }
+            ]
+        },
+        {
+            "Step 2.2: Sorting-II(0/4)": [
+                {
+                    "Merge Sort": "https://bit.ly/3A30Anw"
+                },
+                {
+                    "Recursive Bubble Sort": "https://bit.ly/3QV65vI"
+                },
+                {
+                    "Recursive Insertion Sort": "https://bit.ly/3PxAWx"
+                },
+                {
+                    "Quick Sort": "https://bit.ly/3dsEbIK"
+                }
+            ]
+        }
+    ],
+    "Step 3: Solve Problems on Arrays [Easy -> Medium -> Hard](0/40)": [
+        {
+            "Step 3.1: Easy(0/14)": [
+                {
+                    "Largest Element in an Array": "https://bit.ly/3Pld280"
+                },
+                {
+                    "Second Largest Element in an Array \u2026": "https://bit.ly/3pFvBc"
+                },
+                {
+                    "Check if the array is sorted": "https://bit.ly/3Ap9U6F"
+                },
+                {
+                    "Remove duplicates from Sorted array": "https://bit.ly/3w7b6ck"
+                },
+                {
+                    "Left Rotate an array by one place": "https://bit.ly/3dnn9v"
+                },
+                {
+                    "Left rotate an array by D places": "https://bit.ly/3dyCKZg"
+                },
+                {
+                    "Move Zeros to end": "https://bit.ly/3PrGIjT"
+                },
+                {
+                    "Linear Search": "https://bit.ly/3KcpHcB"
+                },
+                {
+                    "Find the Union": "https://bit.ly/3Ap7Onp"
+                },
+                {
+                    "Find missing number in an array": "https://bit.ly/3A2pKTh"
+                },
+                {
+                    "Maximum Consecutive Ones": "https://bit.ly/3piuaAN"
+                },
+                {
+                    "Find the number that appears once, \u2026": "https://bit.ly/3dudCD8"
+                },
+                {
+                    "Longest subarray with given sum K(p\u2026": "https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&amp;utm_medium=collab_striver_ytdescription&amp;utm_campaign=longest-sub-array-with-sum-k"
+                },
+                {
+                    "Longest subarray with sum K (Positi\u2026": "https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&amp;utm_medium=collab_striver_ytdescription&amp;utm_campaign=longest-sub-array-with-sum-k"
+                }
+            ]
+        },
+        {
+            "Step 3.2: Medium(0/14)": [
+                {
+                    "2Sum Problem": "https://bit.ly/3SVYU8f"
+                },
+                {
+                    "Sort an array of 0's 1's and 2's": "https://bit.ly/3dsROa"
+                },
+                {
+                    "Majority Element (>n/2 times)": "https://bit.ly/3SSpeA"
+                },
+                {
+                    "Kadane's Algorithm, maximum subarra\u2026": "https://bit.ly/3dzyloY"
+                },
+                {
+                    "Print subarray with maximum subarra\u2026": "https://bit.ly/3SLFFhs"
+                },
+                {
+                    "Stock Buy and Sell": "https://bit.ly/3Qrx6H"
+                },
+                {
+                    "Rearrange the array in alternating \u2026": "https://bit.ly/3Qr3sS"
+                },
+                {
+                    "Next Permutation": "https://bit.ly/3dug78"
+                },
+                {
+                    "Leaders in an Array problem": "https://bit.ly/3bZqbGc"
+                },
+                {
+                    "Longest Consecutive Sequence in an \u2026": "https://bit.ly/3ApytA"
+                },
+                {
+                    "Set Matrix Zeros": "https://bit.ly/3SVaSi"
+                },
+                {
+                    "Rotate Matrix by 90 degrees": "https://bit.ly/3PqpeV"
+                },
+                {
+                    "Print the matrix in spiral manner": "https://bit.ly/3ppEJ53"
+                },
+                {
+                    "Count subarrays with given sum": "https://www.codingninjas.com/codestudio/problems/subarray-sums-i_1467103?utm_source=youtube&amp;utm_medium=affiliate&amp;utm_campaign=striver_Arrayproblems"
+                }
+            ]
+        },
+        {
+            "Step 3.3: Hard(0/12)": [
+                {
+                    "Pascal's Triangle": "https://bit.ly/3C95qlR"
+                },
+                {
+                    "Majority Element (n/3 times)": "NO-URL"
+                },
+                {
+                    "3-Sum Problem": "https://bit.ly/3C9uTv"
+                },
+                {
+                    "4-Sum Problem": "https://bit.ly/3psQR53"
+                },
+                {
+                    "Largest Subarray with 0 Sum": "https://bit.ly/3w5QSzC"
+                },
+                {
+                    "Count number of subarrays with give\u2026": "https://bit.ly/3PrvhZs"
+                },
+                {
+                    "Merge Overlapping Subintervals": "https://bit.ly/3zRz904"
+                },
+                {
+                    "Merge two sorted arrays without ext\u2026": "https://bit.ly/3zRzmA"
+                },
+                {
+                    "Find the repeating and missing numb\u2026": "https://bit.ly/3zWZoCs"
+                },
+                {
+                    "Count Inversions": "https://bit.ly/3PtLWLM"
+                },
+                {
+                    "Reverse Pairs": "https://bit.ly/3SVIpJ6"
+                },
+                {
+                    "Maximum Product Subarray": "https://bit.ly/3PrlQsU"
+                }
+            ]
+        }
+    ],
+    "Step 4: Binary Search [1D, 2D Arrays, Search Space](0/31)": [
+        {
+            "Step 4.1: BS on 1D Arrays(0/13)": [
+                {
+                    "Binary Search to find X in sorted a\u2026": "https://bit.ly/3QtKBpO"
+                },
+                {
+                    "Implement Lower Bound": "https://bit.ly/3Cf398"
+                },
+                {
+                    "Implement Upper Bound": "https://bit.ly/3CgDDjE"
+                },
+                {
+                    "Search Insert Position": "https://bit.ly/3pFDbU"
+                },
+                {
+                    "Floor/Ceil in Sorted Array": "https://www.codingninjas.com/codestudio/problems/ceiling-in-a-sorted-array_182540"
+                },
+                {
+                    "Find the first or last occurrence o\u2026": "https://bit.ly/3QuCFE"
+                },
+                {
+                    "Count occurrences of a number in a \u2026": "https://bit.ly/3SVcOqW"
+                },
+                {
+                    "Search in Rotated Sorted Array I": "https://bit.ly/3QH471"
+                },
+                {
+                    "Search in Rotated Sorted Array II": "https://bit.ly/3Rm85Nb"
+                },
+                {
+                    "Find minimum in Rotated Sorted Arra\u2026": "https://bit.ly/3Az1OJ3"
+                },
+                {
+                    "Find out how many times has an arra\u2026": "https://bit.ly/3dEvWJ"
+                },
+                {
+                    "Single element in a Sorted Array": "https://bit.ly/3AllLTj"
+                },
+                {
+                    "Find peak element": "https://bit.ly/3Apsuf3"
+                }
+            ]
+        },
+        {
+            "Step 4.2: BS on Answers(0/13)": [
+                {
+                    "Find square root of a number in log\u2026": "https://bit.ly/3JXtGc"
+                },
+                {
+                    "Find the Nth root of a number using\u2026": "https://bit.ly/3zWNyrL"
+                },
+                {
+                    "Koko Eating Bananas": "https://bit.ly/3LSY491"
+                },
+                {
+                    "Minimum days to make M bouquets": "https://bit.ly/3CJ9Ezm"
+                },
+                {
+                    "Find the smallest Divisor": "https://bit.ly/3SJogFR"
+                },
+                {
+                    "Capacity to Ship Packages within D \u2026": "https://bit.ly/3PBInmS"
+                },
+                {
+                    "Kth Missing Positive Number": "https://bit.ly/3bUFY9l"
+                },
+                {
+                    "Aggressive Cows": "https://bit.ly/3rBuE5Z"
+                },
+                {
+                    "Book Allocation Problem": "https://bit.ly/3QMrMxP"
+                },
+                {
+                    "Split array - Largest Sum": "https://bit.ly/3Qx0RGs"
+                },
+                {
+                    "Minimize Max Distance to Gas Statio\u2026": "https://bit.ly/3s40ybG"
+                },
+                {
+                    "Median of 2 sorted arrays": "https://bit.ly/3QPi7Xp"
+                },
+                {
+                    "Kth element of 2 sorted arrays": "https://bit.ly/3Amcomr"
+                }
+            ]
+        },
+        {
+            "Step 4.3: BS on 2D Arrays(0/5)": [
+                {
+                    "Find the row with maximum number of\u2026": "https://bit.ly/3QNDw2W"
+                },
+                {
+                    "Search in a 2 D matrix": "https://bit.ly/3dAwi3Z"
+                },
+                {
+                    "Search in a row and column wise sor\u2026": "https://www.codingninjas.com/codestudio/problems/search-in-a-row-wise-and-column-wise-sorted-matrix_839811"
+                },
+                {
+                    "Find Peak Element (2D Matrix)": "https://bit.ly/3pEovIA"
+                },
+                {
+                    "Matrix Median": "https://bit.ly/3PvwuPk"
+                }
+            ]
+        }
+    ],
+    "Step 5: Strings [Basic and Medium](0/15)": [
+        {
+            "Step 5.1: Basic and Easy String Problems(0/7)": [
+                {
+                    "Remove outermost Paranthesis": "https://bit.ly/3rzwRix"
+                },
+                {
+                    "Reverse words in a given string / P\u2026": "https://bit.ly/3SXyWB4"
+                },
+                {
+                    "Largest odd number in a string": "https://bit.ly/3UII5yp"
+                },
+                {
+                    "Longest Common Prefix": "https://bit.ly/3QKCyVu"
+                },
+                {
+                    "Isomorphic String": "https://bit.ly/3QwynwI"
+                },
+                {
+                    "check whether one string is a rotat\u2026": "https://bit.ly/3K0HHq5"
+                },
+                {
+                    "Check if two strings are anagram of\u2026": "https://bit.ly/3CcQTWs"
+                }
+            ]
+        },
+        {
+            "Step 5.2: Medium String Problems(0/8)": [
+                {
+                    "Sort Characters by frequency": "https://bit.ly/3dEQp1d"
+                },
+                {
+                    "Maximum Nesting Depth of Paranthesi\u2026": "https://bit.ly/3xYlR1"
+                },
+                {
+                    "Roman Number to Integer and vice ve\u2026": "https://bit.ly/3AqBlNv"
+                },
+                {
+                    "Implement Atoi": "https://bit.ly/3QUHBm"
+                },
+                {
+                    "Count Number of Substrings": "https://bit.ly/3CfQfYi"
+                },
+                {
+                    "Longest Palindromic Substring[Do it\u2026": "https://bit.ly/3CeQ27D"
+                },
+                {
+                    "Sum of Beauty of all substring": "https://bit.ly/3LRh089"
+                },
+                {
+                    "Reverse Every Word in A String": "https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/"
+                }
+            ]
+        }
+    ],
+    "Step 6: Learn LinkedList [Single LL, Double LL, Medium, Hard Problems](0/31)": [
+        {
+            "Step 6.1: Learn 1D LinkedList(0/5)": [
+                {
+                    "Introduction to LinkedList, learn a\u2026": "https://bit.ly/3URZnst"
+                },
+                {
+                    "Inserting a node in LinkedList": "https://bit.ly/3w9pEIt"
+                },
+                {
+                    "Deleting a node in LinkedList": "https://bit.ly/3Apg5a"
+                },
+                {
+                    "Find the length of the linkedlist [\u2026": "https://bit.ly/3Po7tpf"
+                },
+                {
+                    "Search an element in the LL": "https://bit.ly/3Epriup"
+                }
+            ]
+        },
+        {
+            "Step 6.2: Learn Doubly LinkedList(0/4)": [
+                {
+                    "Introduction to DLL, learn about st\u2026": "https://bit.ly/3V9wY1"
+                },
+                {
+                    "Insert a node in DLL": "https://bit.ly/3QD4hHs"
+                },
+                {
+                    "Delete a node in DLL": "https://bit.ly/3QlEoM"
+                },
+                {
+                    "Reverse a DLL": "https://bit.ly/3w6hUaa"
+                }
+            ]
+        },
+        {
+            "Step 6.3: Medium Problems of LL(0/15)": [
+                {
+                    "Middle of a LinkedList [TortoiseHar\u2026": "https://bit.ly/3dAjkn1"
+                },
+                {
+                    "Reverse a LinkedList [Iterative]": "https://bit.ly/3zY03mT"
+                },
+                {
+                    "Reverse a LL [Recursive]": "https://bit.ly/3zY03m"
+                },
+                {
+                    "Detect a loop in LL": "https://bit.ly/3QN8PLn"
+                },
+                {
+                    "Find the starting point in LL": "https://bit.ly/3zuBr66"
+                },
+                {
+                    "Length of Loop in LL": "https://bit.ly/3dyXL6m"
+                },
+                {
+                    "Check if LL is palindrome or not": "https://bit.ly/3JVrnXJ"
+                },
+                {
+                    "Segrregate odd and even nodes in LL": "https://bit.ly/3A3aeqe"
+                },
+                {
+                    "Remove Nth node from the back of th\u2026": "https://bit.ly/3pobNKM"
+                },
+                {
+                    "Delete the middle node of LL": "https://bit.ly/3QzoU7W"
+                },
+                {
+                    "Sort LL": "https://bit.ly/3dDuLd"
+                },
+                {
+                    "Sort a LL of 0's 1's and 2's by cha\u2026": "https://bit.ly/3Ceotv"
+                },
+                {
+                    "Find the intersection point of Y LL": "https://bit.ly/3pl5R4W"
+                },
+                {
+                    "Add 1 to a number represented by LL": "https://bit.ly/3piCTD3"
+                },
+                {
+                    "Add 2 numbers in LL": "https://bit.ly/3JZlGb"
+                }
+            ]
+        },
+        {
+            "Step 6.4: Medium Problems of DLL(0/3)": [
+                {
+                    "Delete all occurrences of a key in \u2026": "https://bit.ly/3zuBr6"
+                },
+                {
+                    "Find pairs with given sum in DLL": "https://bit.ly/3zWPiBj"
+                },
+                {
+                    "Remove duplicates from sorted DLL": "https://bit.ly/3FtJUtZ"
+                }
+            ]
+        },
+        {
+            "Step 6.5: Hard Problems of LL(0/4)": [
+                {
+                    "Reverse LL in group of given size K": "https://bit.ly/3zWPiB"
+                },
+                {
+                    "Rotate a LL": "https://bit.ly/3JXvemY"
+                },
+                {
+                    "Flattening of LL": "https://bit.ly/3w9TKf8"
+                },
+                {
+                    "Clone a Linked List with random and\u2026": "https://bit.ly/3PpM6np"
+                }
+            ]
+        }
+    ],
+    "Step 13: Binary Trees [Traversals, Medium and Hard Problems](0/39)": [
+        {
+            "Step 13.1: Traversals(0/13)": [
+                {
+                    "Introduction to Trees": "https://bit.ly/3EsRmTM"
+                },
+                {
+                    "Binary Tree Representation in C++": "https://bit.ly/3gn5So"
+                },
+                {
+                    "Binary Tree Representation in Java": "https://bit.ly/3gn5Soh"
+                },
+                {
+                    "Binary Tree Traversals in Binary Tr\u2026": "NO-URL"
+                },
+                {
+                    "Preorder Traversal of Binary Tree": "https://bit.ly/3Cb4VIh"
+                },
+                {
+                    "Inorder Traversal of Binary Tree": "https://bit.ly/3QzNDb"
+                },
+                {
+                    "Post-order Traversal of Binary Tree": "https://bit.ly/3SZauQ4"
+                },
+                {
+                    "Level order Traversal / Level order\u2026": "https://bit.ly/3K6t9VR"
+                },
+                {
+                    "Iterative Preorder Traversal of Bin\u2026": "https://bit.ly/3Cb4VIh"
+                },
+                {
+                    "Iterative Inorder Traversal of Bina\u2026": "https://bit.ly/3QzNDbU"
+                },
+                {
+                    "Post-order Traversal of Binary Tree\u2026": "https://bit.ly/3Cb5Wjz"
+                },
+                {
+                    "Post-order Traversal of Binary Tree\u2026": "https://bit.ly/3SZauQ"
+                },
+                {
+                    "Preorder, Inorder, and Postorder Tr\u2026": "https://bit.ly/3T3oW9M"
+                }
+            ]
+        },
+        {
+            "Step 13.2: Medium Problems(0/12)": [
+                {
+                    "Height of a Binary Tree": "https://bit.ly/3CitiDM"
+                },
+                {
+                    "Check if the Binary tree is height-\u2026": "https://bit.ly/3K9YbfB"
+                },
+                {
+                    "Diameter of Binary Tree": "https://bit.ly/3wcfG9l"
+                },
+                {
+                    "Maximum path sum": "https://bit.ly/3QAFjbW"
+                },
+                {
+                    "Check if two trees are identical or\u2026": "https://bit.ly/3c2K52Z"
+                },
+                {
+                    "Zig Zag Traversal of Binary Tree": "https://bit.ly/3K4mwn5"
+                },
+                {
+                    "Boundary Traversal of Binary Tree": "https://bit.ly/3AsfgOK"
+                },
+                {
+                    "Vertical Order Traversal of Binary \u2026": "https://bit.ly/3pqu1er"
+                },
+                {
+                    "Top View of Binary Tree": "https://bit.ly/3PsvE5T"
+                },
+                {
+                    "Bottom View of Binary Tree": "https://bit.ly/3Asftl0"
+                },
+                {
+                    "Right/Left View of Binary Tree": "https://bit.ly/3PCqyE9"
+                },
+                {
+                    "Symmetric Binary Tree": "https://bit.ly/3PCqBz"
+                }
+            ]
+        },
+        {
+            "Step 13.3: Hard Problems(0/14)": [
+                {
+                    "Root to Node Path in Binary Tree": "https://bit.ly/3QA600D"
+                },
+                {
+                    "LCA in Binary Tree": "https://bit.ly/3popvgG"
+                },
+                {
+                    "Maximum width of a Binary Tree": "https://bit.ly/3dxUfZP"
+                },
+                {
+                    "Check for Children Sum Property": "https://bit.ly/3dEr73g"
+                },
+                {
+                    "Print all the Nodes at a distance o\u2026": "https://bit.ly/3QytIu6"
+                },
+                {
+                    "Minimum time taken to BURN the Bina\u2026": "https://bit.ly/3wcg7k1"
+                },
+                {
+                    "Count total Nodes in a COMPLETE Bin\u2026": "https://bit.ly/3EoPFXM"
+                },
+                {
+                    "Requirements needed to construct a \u2026": "https://bit.ly/3UVCR1U"
+                },
+                {
+                    "Construct Binary Tree from inorder \u2026": "https://bit.ly/3AoZ4N5"
+                },
+                {
+                    "Construct the Binary Tree from Post\u2026": "https://bit.ly/3wbFiTI"
+                },
+                {
+                    "Serialize and deserialize Binary Tr\u2026": "https://bit.ly/3PqPDSE"
+                },
+                {
+                    "Morris Preorder Traversal of a Bina\u2026": "https://bit.ly/3EORTB9"
+                },
+                {
+                    "Morris Inorder Traversal of a Binar\u2026": "https://bit.ly/3tJQiGk"
+                },
+                {
+                    "Flatten Binary Tree to LinkedList": "https://bit.ly/3PFzwko"
+                }
+            ]
+        }
+    ],
+    "Step 14: Binary Search Trees [Concept and Problems](0/16)": [
+        {
+            "Step 14.1: Concepts(0/3)": [
+                {
+                    "Introduction to Binary Search Tree": "https://bit.ly/3gprRL"
+                },
+                {
+                    "Search in a Binary Search Tree": "https://practice.geeksforgeeks.org/problems/search-a-node-in-bst/1"
+                },
+                {
+                    "Find Min/Max in BST": "https://practice.geeksforgeeks.org/problems/minimum-element-in-bst/1"
+                }
+            ]
+        },
+        {
+            "Step 14.2: Practice Problems(0/13)": [
+                {
+                    "Ceil in a Binary Search Tree": "https://practice.geeksforgeeks.org/problems/implementing-ceil-in-bst/"
+                },
+                {
+                    "Floor in a Binary Search Tree": "https://bit.ly/3TSbXXE"
+                },
+                {
+                    "Insert a given Node in Binary Searc\u2026": "https://practice.geeksforgeeks.org/problems/insert-a-node-in-a-bst/1"
+                },
+                {
+                    "Delete a Node in Binary Search Tree": "https://practice.geeksforgeeks.org/problems/delete-a-node-from-bst/1"
+                },
+                {
+                    "Find K-th smallest/largest element \u2026": "https://practice.geeksforgeeks.org/problems/find-k-th-smallest-element-in-bst/1#:~:text=Find%20the%20Kth%20Smallest%20element%20in%20the%20BST.&amp;text=Your%20Task%3A,such%20element%20exists%20return%20%2D1."
+                },
+                {
+                    "Check if a tree is a BST or BT": "https://bit.ly/3poHDq"
+                },
+                {
+                    "LCA in Binary Search Tree": "https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-bst/1"
+                },
+                {
+                    "Construct a BST from a preorder tra\u2026": "https://practice.geeksforgeeks.org/problems/preorder-to-postorder4423/1"
+                },
+                {
+                    "Inorder Successor/Predecessor in BS\u2026": "https://practice.geeksforgeeks.org/problems/predecessor-and-successor/1"
+                },
+                {
+                    "Merge 2 BST's": "https://practice.geeksforgeeks.org/problems/merge-two-bst-s/1"
+                },
+                {
+                    "Two Sum In BST | Check if there exi\u2026": "https://practice.geeksforgeeks.org/problems/find-a-pair-with-given-target-in-bst/1"
+                },
+                {
+                    "Recover BST | Correct BST with two \u2026": "https://bit.ly/3PBJwe"
+                },
+                {
+                    "Largest BST in Binary Tree": "https://practice.geeksforgeeks.org/problems/largest-bst/1"
+                }
+            ]
+        }
+    ],
+    "Step 15: Graphs [Concepts & Problems](0/54)": [
+        {
+            "Step 15.1: Learning(0/6)": [
+                {
+                    "Graph and Types": "https://bit.ly/3gpY19"
+                },
+                {
+                    "Graph Representation | C++": "https://bit.ly/3dGuwy"
+                },
+                {
+                    "Graph Representation | Java": "https://bit.ly/3dGuwyv"
+                },
+                {
+                    "Connected Components | Logic Explan\u2026": "https://bit.ly/3AxzhDG"
+                },
+                {
+                    "BFS": "https://practice.geeksforgeeks.org/problems/bfs-traversal-of-graph/1?utm_source=youtube&amp;utm_medium=collab_striver_ytdescription&amp;utm_campaign=bfs_of_grap"
+                },
+                {
+                    "DFS": "https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1?utm_source=youtube&amp;utm_medium=collab_striver_ytdescription&amp;utm_campaign=dfs_of_graph"
+                }
+            ]
+        },
+        {
+            "Step 15.2: Problems on BFS/DFS(0/14)": [
+                {
+                    "Number of provinces (leetcode)": "https://practice.geeksforgeeks.org/problems/number-of-provinces/1?utm_source=youtube&amp;utm_medium=collab_striver_ytdescription&amp;utm_campaign=number_of_provinces"
+                },
+                {
+                    "Connected Components Problem in Mat\u2026": "https://bit.ly/3AxzhDG"
+                },
+                {
+                    "Rotten Oranges": "https://bit.ly/3R4htWb"
+                },
+                {
+                    "Flood fill": "https://practice.geeksforgeeks.org/problems/flood-fill-algorithm1856/1?utm_source=youtube&amp;utm_medium=collab_striver_ytdescription&amp;utm_campaign=flood-fill-algorithm"
+                },
+                {
+                    "Cycle Detection in unirected Graph \u2026": "https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1?utm_source=youtube&amp;utm_medium=collab_striver_ytdescription&amp;utm_campaign=detect-cycle-in-an-undirected-graph"
+                },
+                {
+                    "Cycle Detection in undirected Graph\u2026": "https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1?utm_source=youtube&amp;utm_medium=collab_striver_ytdescription&amp;utm_campaign=detect-cycle-in-an-undirected-graph"
+                },
+                {
+                    "0/1 Matrix (Bfs Problem)": "https://practice.geeksforgeeks.org/problems/distance-of-nearest-cell-having-1-1587115620/1"
+                },
+                {
+                    "Surrounded Regions (dfs)": "https://bit.ly/3T3oDL"
+                },
+                {
+                    "Number of Enclaves [flood fill impl\u2026": "https://practice.geeksforgeeks.org/problems/number-of-enclaves/"
+                },
+                {
+                    "Word ladder - 1": "https://practice.geeksforgeeks.org/problems/word-ladder/1"
+                },
+                {
+                    "Word ladder - 2": "https://practice.geeksforgeeks.org/problems/word-ladder-ii/1"
+                },
+                {
+                    "Number of Distinct Islands [dfs mul\u2026": "https://practice.geeksforgeeks.org/problems/number-of-distinct-islands/1"
+                },
+                {
+                    "Bipartite Graph (DFS)": "https://practice.geeksforgeeks.org/problems/bipartite-graph/1"
+                },
+                {
+                    "Cycle Detection in Directed Graph (\u2026": "https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1"
+                }
+            ]
+        },
+        {
+            "Step 15.3: Topo Sort and Problems(0/7)": [
+                {
+                    "Topo Sort": "https://practice.geeksforgeeks.org/problems/topological-sort/1"
+                },
+                {
+                    "Kahn's Algorithm": "https://bit.ly/3c690mm"
+                },
+                {
+                    "Cycle Detection in Directed Graph (\u2026": "https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1"
+                },
+                {
+                    "Course Schedule - I": "https://practice.geeksforgeeks.org/problems/course-schedule/1"
+                },
+                {
+                    "Course Schedule - II": "https://bit.ly/3w8ZBBl"
+                },
+                {
+                    "Find eventual safe states": "https://practice.geeksforgeeks.org/problems/eventual-safe-states/1"
+                },
+                {
+                    "Alien dictionary": "https://practice.geeksforgeeks.org/problems/alien-dictionary/1"
+                }
+            ]
+        },
+        {
+            "Step 15.4: Shortest Path Algorithms and Problems(0/13)": [
+                {
+                    "Shortest Path in UG with unit weigh\u2026": "https://bit.ly/3UVQD4C"
+                },
+                {
+                    "Shortest Path in DAG": "https://bit.ly/3Eo1mhq"
+                },
+                {
+                    "Djisktra's Algorithm": "https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1"
+                },
+                {
+                    "Why priority Queue is used in Djisk\u2026": "https://bit.ly/3Et6alk"
+                },
+                {
+                    "Shortest path in a binary maze": "https://bit.ly/3ArrkzD"
+                },
+                {
+                    "Path with minimum effort": "https://bit.ly/3OpIfb"
+                },
+                {
+                    "Cheapest flights within k stops": "https://bit.ly/3OnPWi4"
+                },
+                {
+                    "Network Delay time": "https://bit.ly/3pr6ObZ"
+                },
+                {
+                    "Number of ways to arrive at destina\u2026": "https://practice.geeksforgeeks.org/problems/number-of-ways-to-arrive-at-destination/1"
+                },
+                {
+                    "Minimum steps to reach end from sta\u2026": "https://bit.ly/3QAEsrY"
+                },
+                {
+                    "Bellman Ford Algorithm": "https://practice.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/"
+                },
+                {
+                    "Floyd Warshal Algorithm": "https://practice.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1"
+                },
+                {
+                    "Find the city with the smallest num\u2026": "https://practice.geeksforgeeks.org/problems/city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/0/?category[]=Shortest%20Path&amp;category[]=Shortest%20Path&amp;page=1&amp;query=category[]Shortest%20Pathpage1category[]Shortest%20Pat"
+                }
+            ]
+        },
+        {
+            "Step 15.5: MinimumSpanningTree/Disjoint Set and Problems(0/11)": [
+                {
+                    "Minimum Spanning Tree": "https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1"
+                },
+                {
+                    "Prim's Algorithm": "https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/"
+                },
+                {
+                    "Disjoint Set [Union by Rank]": "https://bit.ly/3QSGvH"
+                },
+                {
+                    "Disjoint Set [Union by Size]": "https://bit.ly/3QSGvHz"
+                },
+                {
+                    "Kruskal's Algorithm": "https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1"
+                },
+                {
+                    "Number of operations to make networ\u2026": "https://bit.ly/3Esuzrd"
+                },
+                {
+                    "Most stones removed with same rows \u2026": "https://bit.ly/3Ep4Tfo"
+                },
+                {
+                    "Accounts merge": "https://practice.geeksforgeeks.org/problems/merging-details/1"
+                },
+                {
+                    "Number of island II": "https://bit.ly/3A7BofH"
+                },
+                {
+                    "Making a Large Island": "https://bit.ly/3i1yOmk"
+                },
+                {
+                    "Swim in rising water": "https://bit.ly/3VftZ7i"
+                }
+            ]
+        },
+        {
+            "Step 15.6: Other Algorithms(0/3)": [
+                {
+                    "Bridges in Graph": "https://bit.ly/3dFdvVe"
+                },
+                {
+                    "Articulation Point": "https://bit.ly/3T2LPKu"
+                },
+                {
+                    "Kosaraju's Algorithm": "https://bit.ly/3TbvByL"
+                }
+            ]
+        }
+    ],
+    "Step 16: Dynamic Programming [Patterns and Problems](0/56)": [
+        {
+            "Step 16.1: Introduction to DP(0/1)": [
+                {
+                    "Dynamic Programming Introduction": "https://bit.ly/3UWkWrS"
+                }
+            ]
+        },
+        {
+            "Step 16.2: 1D DP(0/5)": [
+                {
+                    "Climbing Stars": "https://practice.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair-1587115620/"
+                },
+                {
+                    "Frog Jump(DP-3)": "https://bit.ly/3Xn0Kk"
+                },
+                {
+                    "Frog Jump with k distances(DP-4)": "https://bit.ly/3GyNRya"
+                },
+                {
+                    "Maximum sum of non-adjacent element\u2026": "https://bit.ly/3QOMRs"
+                },
+                {
+                    "House Robber (DP 6)": "https://bit.ly/3QCCpD"
+                }
+            ]
+        },
+        {
+            "Step 16.3: 2D/3D DP and DP on Grids(0/7)": [
+                {
+                    "Ninja's Training (DP 7)": "https://bit.ly/3glc9kp"
+                },
+                {
+                    "Grid Unique Paths : DP on Grids (DP\u2026": "https://practice.geeksforgeeks.org/problems/number-of-unique-paths/0"
+                },
+                {
+                    "Grid Unique Paths 2 (DP 9)": "https://bit.ly/3tNYlBU"
+                },
+                {
+                    "Minimum path sum in Grid (DP 10)": "https://bit.ly/3c1H9Uf"
+                },
+                {
+                    "Minimum path sum in Triangular Grid\u2026": "https://bit.ly/3c1H9Uf"
+                },
+                {
+                    "Minimum/Maximum Falling Path Sum (D\u2026": "https://bit.ly/3PwqvtO"
+                },
+                {
+                    "3-d DP : Ninja and his friends (DP-\u2026": "https://bit.ly/3U9k6XT"
+                }
+            ]
+        },
+        {
+            "Step 16.4: DP on Subsequences(0/11)": [
+                {
+                    "Subset sum equal to target (DP- 14)": "https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1"
+                },
+                {
+                    "Partition Equal Subset Sum (DP- 15)": "https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1"
+                },
+                {
+                    "Partition Set Into 2 Subsets With M\u2026": "https://practice.geeksforgeeks.org/problems/minimum-sum-partition3317/1"
+                },
+                {
+                    "Count Subsets with Sum K (DP - 17)": "https://bit.ly/3AwVr8I"
+                },
+                {
+                    "Count Partitions with Given Differe\u2026": "https://bit.ly/3gkAM0"
+                },
+                {
+                    "0/1 Knapsack (DP - 19)": "https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/"
+                },
+                {
+                    "Minimum Coins (DP - 20)": "https://practice.geeksforgeeks.org/problems/-minimum-number-of-coins4426/1"
+                },
+                {
+                    "Target Sum (DP - 21)": "https://practice.geeksforgeeks.org/problems/target-sum-1626326450/"
+                },
+                {
+                    "Coin Change 2 (DP - 22)": "https://bit.ly/3SZJWOl"
+                },
+                {
+                    "Unbounded Knapsack (DP - 23)": "https://bit.ly/3Cbc5fz"
+                },
+                {
+                    "Rod Cutting Problem | (DP - 24)": "https://practice.geeksforgeeks.org/problems/rod-cutting0840/"
+                }
+            ]
+        },
+        {
+            "Step 16.5: DP on Strings(0/10)": [
+                {
+                    "Longest Common Subsequence | (DP - \u2026": "https://practice.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1"
+                },
+                {
+                    "Print Longest Common Subsequence | \u2026": "https://bit.ly/3T1Va4U"
+                },
+                {
+                    "Longest Common Substring | (DP - 27\u2026": "https://practice.geeksforgeeks.org/problems/longest-common-substring1452/"
+                },
+                {
+                    "Longest Palindromic Subsequence | (\u2026": "https://practice.geeksforgeeks.org/problems/longest-palindromic-subsequence-1612327878/1"
+                },
+                {
+                    "Minimum insertions to make string p\u2026": "https://practice.geeksforgeeks.org/problems/form-a-palindrome1455/1"
+                },
+                {
+                    "Minimum Insertions/Deletions to Con\u2026": "https://practice.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1"
+                },
+                {
+                    "Shortest Common Supersequence | (DP\u2026": "https://practice.geeksforgeeks.org/problems/shortest-common-supersequence0322/1"
+                },
+                {
+                    "Distinct Subsequences| (DP-32)": "https://practice.geeksforgeeks.org/problems/number-of-distinct-subsequences0909/1"
+                },
+                {
+                    "Edit Distance | (DP-33)": "https://practice.geeksforgeeks.org/problems/edit-distance3702/1"
+                },
+                {
+                    "Wildcard Matching | (DP-34)": "https://practice.geeksforgeeks.org/problems/wildcard-pattern-matching/1"
+                }
+            ]
+        },
+        {
+            "Step 16.6: DP on Stocks(0/6)": [
+                {
+                    "Best Time to Buy and Sell Stock |(D\u2026": "https://practice.geeksforgeeks.org/problems/stock-buy-and-sell-1587115621/1"
+                },
+                {
+                    "Buy and Sell Stock - II|(DP-36)": "https://bit.ly/3gkV5en"
+                },
+                {
+                    "Buy and Sell Stocks III|(DP-37)": "https://practice.geeksforgeeks.org/problems/buy-and-sell-a-share-at-most-twice/"
+                },
+                {
+                    "Buy and Stock Sell IV |(DP-38)": "https://practice.geeksforgeeks.org/problems/maximum-profit4657/1"
+                },
+                {
+                    "Buy and Sell Stocks With Cooldown|(\u2026": "https://bit.ly/3GycvyA"
+                },
+                {
+                    "Buy and Sell Stocks With Transactio\u2026": "https://bit.ly/3AwUkpe"
+                }
+            ]
+        },
+        {
+            "Step 16.7: DP on LIS(0/7)": [
+                {
+                    "Longest Increasing Subsequence |(DP\u2026": "https://practice.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1"
+                },
+                {
+                    "Printing Longest Increasing Subsequ\u2026": "https://bit.ly/3XiRbmG"
+                },
+                {
+                    "Longest Increasing Subsequence |(DP\u2026": "https://bit.ly/3Pxf84"
+                },
+                {
+                    "Largest Divisible Subset|(DP-44)": "https://bit.ly/3hYsWKC"
+                },
+                {
+                    "Longest String Chain|(DP-45)": "https://bit.ly/3TSqOkS"
+                },
+                {
+                    "Longest Bitonic Subsequence |(DP-46\u2026": "https://practice.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/"
+                },
+                {
+                    "Number of Longest Increasing Subseq\u2026": "https://bit.ly/3EohD60"
+                }
+            ]
+        },
+        {
+            "Step 16.8: MCM DP | Partition DP(0/7)": [
+                {
+                    "Matrix Chain Multiplication|(DP-48)": "https://bit.ly/3Cgg36D"
+                },
+                {
+                    "Matrix Chain Multiplication | Botto\u2026": "https://bit.ly/3Cgg36D"
+                },
+                {
+                    "Minimum Cost to Cut the Stick|(DP-5\u2026": "https://bit.ly/3K3ItC"
+                },
+                {
+                    "Burst Balloons|(DP-51)": "https://bit.ly/3A9LdKp"
+                },
+                {
+                    "Evaluate Boolean Expression to True\u2026": "https://bit.ly/3QFAe2o"
+                },
+                {
+                    "Palindrome Partitioning - II|(DP-53\u2026": "https://bit.ly/3QP6gsc"
+                },
+                {
+                    "Partition Array for Maximum Sum|(DP\u2026": "https://bit.ly/3AUSIGj"
+                }
+            ]
+        },
+        {
+            "Step 16.9: DP on Squares(0/2)": [
+                {
+                    "Maximum Rectangle Area with all 1's\u2026": "https://practice.geeksforgeeks.org/problems/max-rectangle/1"
+                },
+                {
+                    "Count Square Submatrices with All O\u2026": "https://bit.ly/3UW7u7o"
+                }
+            ]
+        }
+    ]
+}
