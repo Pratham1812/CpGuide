@@ -38,8 +38,7 @@ interface StepData {
   sub_headings: string[];
   urls: any;
 }
-export default function ProfilePage(){
-
+export default function ProfilePage() {
   const [cookies] = useCookies(["token"]);
   const [userData, setUserData] = useState<UserData | null>(null);
   const [outerOpen, setOuterOpen] = useState<boolean>(false);
@@ -47,8 +46,8 @@ export default function ProfilePage(){
   const [stepData, setStepData] = useState<StepData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [status, setStatus] = useState("unvisited");
-  const [parsed,setParsed] = useState<any | null>(null)
-  
+  const [parsed, setParsed] = useState<any | null>(null);
+
   const toggleOuterCollapse = () => {
     setOuterOpen(!outerOpen);
   };
@@ -73,24 +72,22 @@ export default function ProfilePage(){
     toast("me clicked");
     const endpoint = "http://127.0.0.1:8000/api/auth/profile";
     const data = {
-      username:userData?.username,
-      links:userData?.links
-    }
+      username: userData?.username,
+      links: userData?.links,
+    };
     const options = {
-        method: "PATCH",
-        headers: {
-          Authorization: "Bearer " + cookies["token"],
-        },
-        body:JSON.stringify(data)
+      method: "PATCH",
+      headers: {
+        Authorization: "Bearer " + cookies["token"],
+      },
+      body: JSON.stringify(data),
+    };
+    const response = await fetch(endpoint, options);
+    if (response.ok) {
+      toast("your progress has been saved");
+      router.push("/profile");
+    }
   };
-  const response = await fetch(endpoint,options)
-  if(response.ok){
-    toast("your progress has been saved")
-    router.push("/profile")
-  }
-
-
-}
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -109,11 +106,9 @@ export default function ProfilePage(){
 
         if (response.ok) {
           setUserData(obj);
-          // console.log(typeof(obj.links))
-          var d1 = JSON.parse(obj.links)
-          // setParsed(JSON.parse(obj.links))
-          setParsed(JSON.parse(JSON.parse(d1["links"])["links"]))
-          // console.log(parsed)
+
+          var d1 = JSON.parse(JSON.parse(obj.links));
+          setParsed(d1);
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
@@ -137,9 +132,9 @@ export default function ProfilePage(){
     setStepData(parsedData);
     setLoading(false);
   }, []);
-  
+
   const status_click = (
-    token:string,
+    token: string,
     index: number,
     subIndex: number,
     innerIndex: number,
@@ -154,20 +149,19 @@ export default function ProfilePage(){
       lname: "",
       links: "",
     };
-    if (
-      copyData[index].urls[subIndex][innerIndex][innerKey].status != token
-    ) {
+    if (copyData[index].urls[subIndex][innerIndex][innerKey].status != token) {
       copyData[index].urls[subIndex][innerIndex][innerKey].status = token;
 
-      const copyParse = {...parsed}
+      const copyParse = parsed;
       copyParse[topic] = token;
-      
-      setParsed(copyParse)
+
+      setParsed(copyParse);
+
       userDataCopy.links = JSON.stringify(parsed);
       setUserData(userDataCopy);
-      console.log(userData)
+
       setStepData(copyData);
-    } 
+    }
   };
 
   return (
@@ -262,10 +256,13 @@ export default function ProfilePage(){
                                           (urlObj: any, innerIndex: number) => {
                                             const innerKey =
                                               Object.keys(urlObj)[0];
-                                              
+
                                             let { topic, link, status } =
                                               urlObj[innerKey];
-                                            status = parsed == null ? status : parsed[topic]
+                                            status =
+                                              parsed == null
+                                                ? status
+                                                : parsed[topic];
                                             return (
                                               <Card
                                                 className="border border-light p-4 mb-4"
@@ -276,12 +273,13 @@ export default function ProfilePage(){
                                                 </Card.Title>
                                                 <ul className="list-unstyled">
                                                   <li>
-                                                    <Button className="my-4">
-                                                      <a href={link}>Solve</a>
+                                                    <Button className="my-4 btn btn-outline-light" variant="outline-light">
+                                                      <a href={link} target="_blank">Solve</a>
                                                     </Button>
                                                     <br />
                                                     <DropdownButton
-                                                      id="dropdown-basic-button"
+                                                    className="btn btn-outline-light"
+                                                      variant="dark"
                                                       title={status}
                                                     >
                                                       <Dropdown.Item
@@ -343,6 +341,4 @@ export default function ProfilePage(){
       </Fab>
     </center>
   );
-};
-
-
+}

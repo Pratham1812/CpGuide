@@ -1,5 +1,5 @@
 "use client"
-import { Form, Button } from 'react-bootstrap'
+import { Form, } from 'react-bootstrap'
 
 import { useRouter } from 'next/navigation'
 import { NextRequest, NextResponse } from 'next/server'
@@ -7,6 +7,8 @@ import { useCookies } from 'react-cookie'
 
 import { toast } from 'react-hot-toast'
 import delay from 'delay'
+import React from 'react';
+    import { Button, TextField, FormControl, Typography, Box } from '@mui/material';
 
 export default async function Login() {
   const router = useRouter()
@@ -47,27 +49,75 @@ export default async function Login() {
     }
 
 
-
-
-
-  
-
-
-
-return (
-  <Form onSubmit={login_handler}>
-    <Form.Group>
-      <Form.Label>Enter your username:</Form.Label>
-      <Form.Control type="text" placeholder="Enter your username" name="username" />
-    </Form.Group>
-    <Form.Group>
-      <Form.Label>Enter your passoword:</Form.Label>
-      <Form.Control type="password" placeholder="Enter your username" name="password" />
-    </Form.Group>
-    <br />
-    <Button variant="primary" type="submit">
-      Click here to submit form
-    </Button>
-  </Form>
-)
-}
+    
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100vh',
+          backgroundColor: '#1A202C',
+        }}
+      >
+        <Box
+          sx={{
+            width: '80%',
+            maxWidth: 300,
+            padding: '40px',
+            borderRadius: '8px',
+            backgroundColor: '#2D3748',
+            marginTop: 'normal',
+            marginBottom: '250px', // Move the form higher
+          }}
+        >
+          <Typography variant="h5" gutterBottom style={{ color: '#E2E8F0', marginBottom: '20px' }}>
+            Login
+          </Typography>
+          <FormControl component="form" onSubmit={login_handler}>
+            <TextField
+              fullWidth
+              label="Enter your Username"
+              type="text"
+              placeholder="Username"
+              name="username"
+              variant="outlined"
+              margin="normal"
+              required
+              InputProps={{ style: { color: '#E2E8F0' } }}
+              InputLabelProps={{ style: { color: '#E2E8F0' } }}
+            />
+            <TextField
+              fullWidth
+              label="Enter your Password"
+              type="password"
+              placeholder=" Password"
+              name="password"
+              variant="outlined"
+              margin="normal"
+              required
+              InputProps={{ style: { color: '#E2E8F0' } }}
+              InputLabelProps={{ style: { color: '#E2E8F0' } }}
+            />
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              fullWidth
+              sx={{
+                backgroundColor: '#4A5568',
+                color: '#E2E8F0',
+                padding: '12px',
+                '&:hover': {
+                  backgroundColor: '#2D3748',
+                },
+              }}
+            >
+              Submit 
+            </Button>
+          </FormControl>
+        </Box>
+      </Box>
+    );
+  };
