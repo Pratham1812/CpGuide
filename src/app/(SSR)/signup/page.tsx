@@ -4,7 +4,10 @@ import { redirect } from 'next/navigation'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { useRouter } from 'next/navigation'
-import { Container,Form,Button } from 'react-bootstrap'
+import { Container,Form } from 'react-bootstrap'
+import React from 'react';
+import { Button, TextField, FormControl, Typography, Box } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import register_usr from './register_usr';?
 export default async function SignUp(){
     const router = useRouter()
@@ -47,36 +50,113 @@ if(response.status == 400){
 
     }
 
- return( 
-    <Form onSubmit={register_usr}>
-    <Form.Group>
-        <Form.Label>Enter your first name:</Form.Label>
-        <Form.Control type="text" 
-                      placeholder="Enter your full name" name="fname" />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Enter your last name:</Form.Label>
-        <Form.Control type="text" 
-                      placeholder="Enter your full name" name="lname" />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Enter your email address:</Form.Label>
-        <Form.Control type="email" 
-                      placeholder="Enter your your email address" name="email" />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Enter your username:</Form.Label>
-        <Form.Control type="text" placeholder="Enter your username" name="username" />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Enter your passoword:</Form.Label>
-        <Form.Control type="password" placeholder="Enter your username" name="password" />
-      </Form.Group>
-      <br/>
-      <Button variant="primary" type="submit">
-         Click here to submit form
-      </Button>
-    </Form>
-    )
-
-}
+    return (
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '100vh',
+            backgroundColor: '#1A202C',
+          }}
+        >
+          <Box
+            sx={{
+              width: '90%',
+              maxWidth: 400,
+              padding: '40px',
+              borderRadius: '8px',
+              backgroundColor: '#2D3748',
+              marginTop: 'normal',
+              marginBottom: '100px', // Move the form higher
+            }}
+          >
+            <Typography variant="h5" gutterBottom style={{ color: '#E2E8F0', marginBottom: '20px' }}>
+              SignUp
+            </Typography>
+            <FormControl component="form" onSubmit={register_usr}>
+              <TextField
+                fullWidth
+                label="Enter you First Name"
+                type="text"
+                placeholder="First Name"
+                name="fname"
+                variant="outlined"
+                margin="normal"
+                required
+                InputProps={{ style: { color: '#E2E8F0' } }}
+                InputLabelProps={{ style: { color: '#E2E8F0' } }}
+              />
+              <TextField
+                fullWidth
+                label="Enter your Last Name"
+                type="text"
+                placeholder="Last Name"
+                name="lname"
+                variant="outlined"
+                margin="normal"
+                required
+                InputProps={{ style: { color: '#E2E8F0' } }}
+                InputLabelProps={{ style: { color: '#E2E8F0' } }}
+              />
+              
+              <TextField
+                fullWidth
+                label="Enter your Email ID"
+                type="text"
+                placeholder="Email ID"
+                name="email"
+                variant="outlined"
+                margin="normal"
+                required
+                InputProps={{ style: { color: '#E2E8F0' } }}
+                InputLabelProps={{ style: { color: '#E2E8F0' } }}
+              />
+              <TextField
+            
+                label="Enter your Username"
+                type="text"
+                placeholder="Username"
+                name="username"
+                variant="outlined"
+                margin="normal"
+                required
+                InputProps={{ style: { color: '#E2E8F0' } }}
+                InputLabelProps={{ style: { color: '#E2E8F0' } }}
+                
+              />
+              
+              <TextField
+                fullWidth
+                label="Enter your Password"
+                type="password"
+                placeholder="Enter your password"
+                name="password"
+                variant="outlined"
+                margin="normal"
+                required
+                InputProps={{ style: { color: '#E2E8F0' } }}
+                InputLabelProps={{ style: { color: '#E2E8F0' } }}
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                fullWidth
+                sx={{
+                  backgroundColor: '#4A5568',
+                  color: '#E2E8F0',
+                  padding: '12px',
+                  '&:hover': {
+                    backgroundColor: '#2D3748',
+                  },
+                }}
+              >
+              Login
+              </Button>
+            </FormControl>
+          </Box>
+        </Box>
+      );
+    };
