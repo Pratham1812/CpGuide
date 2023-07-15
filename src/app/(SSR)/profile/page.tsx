@@ -109,9 +109,11 @@ export default function ProfilePage(){
 
         if (response.ok) {
           setUserData(obj);
-          console.log(typeof(obj.links))
-          
-          setParsed(JSON.parse((obj ?? {"links":""}) .links))
+          // console.log(typeof(obj.links))
+          var d1 = JSON.parse(obj.links)
+          // setParsed(JSON.parse(obj.links))
+          setParsed(JSON.parse(JSON.parse(d1["links"])["links"]))
+          // console.log(parsed)
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
@@ -159,7 +161,7 @@ export default function ProfilePage(){
 
       const copyParse = {...parsed}
       copyParse[topic] = token;
-      console.log(copyParse)
+      
       setParsed(copyParse)
       userDataCopy.links = JSON.stringify(parsed);
       setUserData(userDataCopy);
@@ -280,7 +282,7 @@ export default function ProfilePage(){
                                                     <br />
                                                     <DropdownButton
                                                       id="dropdown-basic-button"
-                                                      title={parsed==null ? status : parsed && status }
+                                                      title={status}
                                                     >
                                                       <Dropdown.Item
                                                         onClick={() => {
