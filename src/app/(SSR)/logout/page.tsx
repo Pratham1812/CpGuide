@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useCookies } from 'react-cookie'
 import toast from 'react-hot-toast'
-export default function Profile(){
+export default function Logout(){
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
     removeCookie('token',{path:'/'})
     const router = useRouter()

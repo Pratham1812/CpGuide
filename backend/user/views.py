@@ -7,8 +7,11 @@ from rest_framework.decorators import api_view
 from .serializers import UserSerializer
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.backends import TokenBackend
+from .models import JsonHandler
 import json
-   
+import os
+from django.conf import settings
+import base64
         
 class SignUp(APIView):
     def get(self,request):
@@ -31,6 +34,12 @@ class SignUp(APIView):
             user.first_name = fname
             
             user.save()
+            
+            with open(os.path.join(settings.BASE_DIR, 'data_finally_links.json')) as f:
+                 txt = f.read()
+            print(txt)     
+            prefs = JsonHandler(username=username,data=json.loads(txt))
+            prefs.save()
             return Response("sorted", status=200)
                 
        
@@ -44,11 +53,20 @@ class profile(APIView):
             valid_data = TokenBackend(algorithm='HS256').decode(token,verify=False)
         
             user = User.objects.get(username=request.user)
-        
+            prefs = JsonHandler.objects.get(username=request.user)
+            data = json.dumps(prefs.data)
+            print(type(data))
             test = {
                  "username":user.username,
                  "email":user.email,
                  "fname":user.first_name,
                  "lname":user.last_name,
+                 "links":data
             }
             return Response(json.dumps(test))
+    def patch(self,request):
+         data = json.loads(request.body.decode())
+         prefs = JsonHandler.objects.get(username=request.user)
+         prefs.data = data
+         prefs.save()
+         return Response("EMU AUTH")

@@ -10,14 +10,14 @@ export default function NavBar(){
     const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
     return(
-        <Navbar bg="dark" variant="dark" expand="sm" className="text-primary" collapseOnSelect suppressHydrationWarning >
-            <Container>
+        <Navbar bg="dark" variant="dark" expand="sm" className="text-primary" collapseOnSelect sticky="top">
+            
                 <Navbar.Brand as={Link} href="/">
                     CpGuide
                     </Navbar.Brand>
                 <Navbar.Toggle aria-controls="main-navbar"/>
                 <Navbar.Collapse id="main-navbar">
-                    <Nav>
+                    <Nav className="justify-content-end">
                         {!cookies['token'] && <Nav.Link as ={Link} href="/signup">Signup</Nav.Link>}
                         {!cookies['token'] && <Nav.Link as ={Link} href="/login">Login</Nav.Link>}
                         {cookies['token'] && <Nav.Link as ={Link} href="/logout" className="float-end">Logout</Nav.Link>}
@@ -26,7 +26,7 @@ export default function NavBar(){
                     
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
+            
         </Navbar>
     )
 }
