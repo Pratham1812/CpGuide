@@ -10,10 +10,6 @@ const roboto = Roboto_Slab({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Image Gallery",
-  description: "First next proj",
-};
 
 export default function RootLayout({
   children,
