@@ -23,7 +23,7 @@ export default async function SignUp(){
         }
     
     const JSONdata = JSON.stringify(data)
-    const endpoint = 'http://127.0.0.1:8000/api/auth/signup'
+    const endpoint = 'https://clasherrox.pythonanywhere.com/api/auth/signup'
     const options = {method:'POST',
 headers:{
     'Content-Type':'application/json',

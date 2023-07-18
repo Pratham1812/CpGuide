@@ -73,7 +73,7 @@ export default function ProfilePage() {
 
   const SaveClick = async () => {
     toast("me clicked");
-    const endpoint = "http://127.0.0.1:8000/api/auth/profile";
+    const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
     const data = {
       username: userData?.username,
       links: userData?.links,
@@ -94,7 +94,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     const fetchProfileData = async () => {
-      const endpoint = "http://127.0.0.1:8000/api/auth/profile";
+      const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
       const options = {
         method: "GET",
         headers: {

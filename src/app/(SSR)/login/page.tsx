@@ -22,7 +22,7 @@ export default async function Login() {
       }
 
       const JSONdata = JSON.stringify(data)
-      const endpoint = 'http://127.0.0.1:8000/api/auth/login'
+      const endpoint = 'https://clasherrox.pythonanywhere.com/api/auth/login'
       const options = {
         method: 'POST',
         headers: {

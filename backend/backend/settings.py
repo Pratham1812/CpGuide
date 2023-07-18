@@ -86,7 +86,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    "https://stalwart-flan-936cac.netlify.app"
 ]
 
 
