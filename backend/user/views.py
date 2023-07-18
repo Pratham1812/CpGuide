@@ -55,7 +55,7 @@ class profile(APIView):
             user = User.objects.get(username=request.user)
             prefs = JsonHandler.objects.get(username=request.user)
             data = json.dumps(prefs.data["links"])
-            print((data))
+            
             test = {
                  "username":user.username,
                  "email":user.email,

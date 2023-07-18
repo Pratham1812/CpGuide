@@ -8,11 +8,7 @@ export default function NavBar() {
   const pathName = usePathname();
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
-  const logout = () => {
-    // Your logout logic here
-    removeCookie("token");
-    // Perform any additional logout actions if needed
-  };
+  
 
   return (
     <Navbar
@@ -51,9 +47,9 @@ export default function NavBar() {
               </>
             )}
             {cookies["token"] && (
-              <Button variant="outline-light" className="me-2" onClick={logout}>
+              <Nav.Link className="me-2" as={Link} href="/logout">
                 Logout
-              </Button>
+              </Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>

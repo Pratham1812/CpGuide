@@ -8,6 +8,7 @@ import {
   Collapse,
   DropdownButton,
   Dropdown,
+  Alert
 } from "react-bootstrap";
 import SaveIcon from "@mui/icons-material/Save";
 import Fab from "@mui/material/Fab";
@@ -19,6 +20,7 @@ import data from "./data.json";
 
 import Tooltip from "@mui/material/Tooltip";
 import { useRouter } from "next/navigation";
+import { ElevatorSharp } from "@mui/icons-material";
 interface UserData {
   username: string;
   email: string;
@@ -46,6 +48,7 @@ export default function ProfilePage() {
   const [stepData, setStepData] = useState<StepData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [status, setStatus] = useState("unvisited");
+  const [check,setCheck] = useState(true)
   const [parsed, setParsed] = useState<any | null>(null);
 
   const toggleOuterCollapse = () => {
@@ -113,7 +116,7 @@ export default function ProfilePage() {
       } catch (error) {
         console.error("Error fetching profile data:", error);
         toast.error("Error fetching profile data");
-        // setUserName(null);
+        setUserData(null);
       } finally {
         setLoading(false);
       }
@@ -130,6 +133,7 @@ export default function ProfilePage() {
     }));
 
     setStepData(parsedData);
+   
     setLoading(false);
   }, []);
 
@@ -149,7 +153,20 @@ export default function ProfilePage() {
       lname: "",
       links: "",
     };
-    if (copyData[index].urls[subIndex][innerIndex][innerKey].status != token) {
+
+    if(token=="visited"){
+      copyData[index].urls[subIndex][innerIndex][innerKey].status = token;
+
+      const copyParse = parsed;
+      copyParse[topic] = token;
+
+      setParsed(copyParse);
+
+      userDataCopy.links = JSON.stringify(parsed);
+      setUserData(userDataCopy);
+
+      setStepData(copyData);
+    }else if(token=="unvisited"){
       copyData[index].urls[subIndex][innerIndex][innerKey].status = token;
 
       const copyParse = parsed;
@@ -162,6 +179,7 @@ export default function ProfilePage() {
 
       setStepData(copyData);
     }
+    
   };
 
   return (
@@ -182,6 +200,7 @@ export default function ProfilePage() {
             <Container>
               {userData && (
                 <Card className="border border-light p-4 mb-4">
+                  
                   <Card.Title className=" fw-bold h5 mb-4">
                     Profile Information
                   </Card.Title>
@@ -199,10 +218,13 @@ export default function ProfilePage() {
                 </Card>
               )}
 
-              {/* Double collapsible widgets */}
+             
               <Card className="border border-light p-4">
                 <Card.Title className=" fw-bold h5 mb-4">
-                  Collapsible Widgets
+                  
+                  <Alert key="primary" variant="primary">
+          Save your progress before leaving by clicking the button in bottom right
+        </Alert>
                 </Card.Title>
                 {stepData.length > 0 &&
                   stepData.map((step: StepData, index: number) => {
@@ -273,8 +295,9 @@ export default function ProfilePage() {
                                                 </Card.Title>
                                                 <ul className="list-unstyled">
                                                   <li>
-                                                    <Button className="my-4 btn btn-outline-light" variant="outline-light">
-                                                      <a href={link} target="_blank">Solve</a>
+                                                    <Button className="my-4 btn btn-outline-light" variant="outline-light" >
+                                                      {link=="NO-URL" ? (<a href="" target="_blank">NO-URL available</a>) : (<a href={link} target="_blank">Solve</a>)}
+                                                      
                                                     </Button>
                                                     <br />
                                                     <DropdownButton

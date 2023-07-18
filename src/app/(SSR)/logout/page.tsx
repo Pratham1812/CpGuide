@@ -1,5 +1,5 @@
 "use client"
-
+import { Alert } from "react-bootstrap";
 import { useRouter } from "next/navigation";
 import { useCookies } from 'react-cookie'
 import toast from 'react-hot-toast'
@@ -11,5 +11,5 @@ export default function Logout(){
     setTimeout(()=>router.push("/"),2000)
 
 
-    return <h1>You have been logged out </h1>
+    return <Alert variant="primary" >You have been logged out </Alert>
 }
