@@ -79,7 +79,7 @@ export default function ProfilePage() {
       links: userData?.links,
     };
     const options = {
-      method: "PATCH",
+      method: "POST",
       headers: {
         Authorization: "Bearer " + cookies["token"],
       },
@@ -109,12 +109,10 @@ export default function ProfilePage() {
 
         if (response.ok) {
           setUserData(obj);
-          console.log(obj)
-          console.log(obj.links)
-          console.log(typeof(obj.links))
+          
           var d1 = (JSON.parse(obj.links));
           setParsed(d1);
-          console.log(d1)
+          
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
