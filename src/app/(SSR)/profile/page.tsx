@@ -110,10 +110,9 @@ export default function ProfilePage() {
         if (response.ok) {
           setUserData(obj);
 
-          var d1 = JSON.parse(obj.links);
+          var d1 = JSON.parse(JSON.parse(obj.links));
           setParsed(d1);
-          console.log(parsed)
-          console.log(typeof(parsed))
+          console.log(d1)
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
