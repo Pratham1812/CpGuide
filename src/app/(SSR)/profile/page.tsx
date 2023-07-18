@@ -105,10 +105,13 @@ export default function ProfilePage() {
         let obj: UserData = await JSON.parse(data);
 
         if (response.ok) {
+          console.log(obj)
           setUserData(obj);
-
+          
           var d1 = JSON.parse(JSON.parse(obj.links));
+          console.log(typeof(d1))
           setParsed(d1);
+          console.log(parsed)
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
@@ -154,12 +157,14 @@ export default function ProfilePage() {
 
       const copyParse = parsed;
       copyParse[topic] = token;
-
+      console.log(parsed)
+      console.log(copyParse)
       setParsed(copyParse);
 
       userDataCopy.links = JSON.stringify(parsed);
+      
       setUserData(userDataCopy);
-
+      console.log(userData)
       setStepData(copyData);
     }
   };
