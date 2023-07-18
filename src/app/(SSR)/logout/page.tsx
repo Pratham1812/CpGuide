@@ -8,7 +8,7 @@ export default function Logout(){
     removeCookie('token',{path:'/'})
     const router = useRouter()
     toast.success("redirecting...")
-    setTimeout(()=>router.push("/"),2000)
+    router.replace("/")
 
 
     return <h1>You have been logged out </h1>
