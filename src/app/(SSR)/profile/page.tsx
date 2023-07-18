@@ -112,6 +112,8 @@ export default function ProfilePage() {
 
           var d1 = JSON.parse(obj.links);
           setParsed(d1);
+          console.log(parsed)
+          console.log(typeof(parsed))
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
