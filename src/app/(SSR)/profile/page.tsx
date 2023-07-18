@@ -109,8 +109,10 @@ export default function ProfilePage() {
 
         if (response.ok) {
           setUserData(obj);
-
-          var d1 = JSON.parse(JSON.parse(obj.links));
+          console.log(obj)
+          console.log(obj.links)
+          console.log(typeof(obj.links))
+          var d1 = (JSON.parse(obj.links));
           setParsed(d1);
           console.log(d1)
         }
