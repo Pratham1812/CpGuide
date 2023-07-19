@@ -72,7 +72,7 @@ export default function ProfilePage() {
   const router = useRouter();
 
   const SaveClick = async () => {
-    toast("me clicked");
+    
     const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
     const data = {
       username: userData?.username,
@@ -82,6 +82,7 @@ export default function ProfilePage() {
       method: "POST",
       headers: {
         Authorization: "Bearer " + cookies["token"],
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(data),
     };
@@ -112,6 +113,7 @@ export default function ProfilePage() {
           
           var d1 = (JSON.parse(obj.links));
           setParsed(d1);
+          
           
         }
       } catch (error) {
@@ -159,12 +161,14 @@ export default function ProfilePage() {
       copyData[index].urls[subIndex][innerIndex][innerKey].status = token;
 
       const copyParse = parsed;
+      
       copyParse[topic] = token;
-
+      
       setParsed(copyParse);
-
+      
       userDataCopy.links = JSON.stringify(parsed);
       setUserData(userDataCopy);
+      
 
       setStepData(copyData);
     }else if(token=="unvisited"){
@@ -172,9 +176,11 @@ export default function ProfilePage() {
 
       const copyParse = parsed;
       copyParse[topic] = token;
-
+      
+      
       setParsed(copyParse);
-
+      
+      
       userDataCopy.links = JSON.stringify(parsed);
       setUserData(userDataCopy);
 
