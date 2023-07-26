@@ -8,7 +8,8 @@ import {
   Collapse,
   DropdownButton,
   Dropdown,
-  Alert
+  Alert,
+  Accordion,
 } from "react-bootstrap";
 import SaveIcon from "@mui/icons-material/Save";
 import Fab from "@mui/material/Fab";
@@ -48,7 +49,7 @@ export default function ProfilePage() {
   const [stepData, setStepData] = useState<StepData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [status, setStatus] = useState("unvisited");
-  const [check,setCheck] = useState(true)
+  const [check, setCheck] = useState(true);
   const [parsed, setParsed] = useState<any | null>(null);
 
   const toggleOuterCollapse = () => {
@@ -72,8 +73,7 @@ export default function ProfilePage() {
   const router = useRouter();
 
   const SaveClick = async () => {
-    
-    const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
+    const endpoint = "http://clasherrox.pythonanywhere.com/api/auth/profile";
     const data = {
       username: userData?.username,
       links: userData?.links,
@@ -82,7 +82,7 @@ export default function ProfilePage() {
       method: "POST",
       headers: {
         Authorization: "Bearer " + cookies["token"],
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     };
@@ -95,7 +95,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     const fetchProfileData = async () => {
-      const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
+      const endpoint = "http://clasherrox.pythonanywhere.com/api/auth/profile";
       const options = {
         method: "GET",
         headers: {
@@ -110,11 +110,9 @@ export default function ProfilePage() {
 
         if (response.ok) {
           setUserData(obj);
-          
-          var d1 = (JSON.parse(obj.links));
+
+          var d1 = JSON.parse(obj.links);
           setParsed(d1);
-          
-          
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
@@ -136,7 +134,7 @@ export default function ProfilePage() {
     }));
 
     setStepData(parsedData);
-   
+
     setLoading(false);
   }, []);
 
@@ -157,36 +155,32 @@ export default function ProfilePage() {
       links: "",
     };
 
-    if(token=="visited"){
+    if (token == "visited") {
       copyData[index].urls[subIndex][innerIndex][innerKey].status = token;
 
       const copyParse = parsed;
-      
+
       copyParse[topic] = token;
-      
+
       setParsed(copyParse);
-      
+
       userDataCopy.links = JSON.stringify(parsed);
       setUserData(userDataCopy);
-      
 
       setStepData(copyData);
-    }else if(token=="unvisited"){
+    } else if (token == "unvisited") {
       copyData[index].urls[subIndex][innerIndex][innerKey].status = token;
 
       const copyParse = parsed;
       copyParse[topic] = token;
-      
-      
+
       setParsed(copyParse);
-      
-      
+
       userDataCopy.links = JSON.stringify(parsed);
       setUserData(userDataCopy);
 
       setStepData(copyData);
     }
-    
   };
 
   return (
@@ -207,7 +201,6 @@ export default function ProfilePage() {
             <Container>
               {userData && (
                 <Card className="border border-light p-4 mb-4">
-                  
                   <Card.Title className=" fw-bold h5 mb-4">
                     Profile Information
                   </Card.Title>
@@ -225,13 +218,12 @@ export default function ProfilePage() {
                 </Card>
               )}
 
-             
               <Card className="border border-light p-4">
                 <Card.Title className=" fw-bold h5 mb-4">
-                  
                   <Alert key="primary" variant="primary">
-          Save your progress before leaving by clicking the button in bottom right
-        </Alert>
+                    Save your progress before leaving by clicking the button in
+                    bottom right
+                  </Alert>
                 </Card.Title>
                 {stepData.length > 0 &&
                   stepData.map((step: StepData, index: number) => {
@@ -243,116 +235,115 @@ export default function ProfilePage() {
                         className="border border-light p-4 mb-4"
                         key={index}
                       >
-                        <Card.Title className=" fw-bold h5 mb-4">
-                          {step.heading}
-                        </Card.Title>
-                        {subHeadings.length > 0 &&
-                          subHeadings.map(
-                            (subHeading: string, subIndex: number) => {
-                              const urlData: UrlData[] = urls[subIndex] || [];
+                        <Accordion defaultActiveKey="0">
+                          <Accordion.Item eventKey="{index}">
+                            <Accordion.Header>{step.heading}</Accordion.Header>
+                            <Accordion.Body>
+                              {subHeadings.length > 0 &&
+                                subHeadings.map(
+                                  (subHeading: string, subIndex: number) => {
+                                    const urlData: UrlData[] =
+                                      urls[subIndex] || [];
+                                    return (
+                                      <Accordion defaultActiveKey="0">
+                                        <Accordion.Header>
+                                          {subHeading}
+                                        </Accordion.Header>
+                                        <Accordion.Body>
+                                          {urlData.length > 0 &&
+                                            urlData.map(
+                                              (
+                                                urlObj: any,
+                                                innerIndex: number
+                                              ) => {
+                                                const innerKey =
+                                                  Object.keys(urlObj)[0];
 
-                              return (
-                                <div key={subIndex}>
-                                  <Button
-                                    variant="link"
-                                    onClick={toggleOuterCollapse}
-                                    aria-expanded={outerOpen}
-                                    aria-controls={`outer-collapse-content-${index}-${subIndex}`}
-                                    className={`d-flex align-items-center mt-3 ${
-                                      outerOpen ? "rotate" : ""
-                                    }`}
-                                  >
-                                    <span
-                                      className={`me-2 ${
-                                        outerOpen ? "rotate" : ""
-                                      }`}
-                                    >
-                                      {outerOpen ? (
-                                        <FaAngleDown />
-                                      ) : (
-                                        <FaAngleRight />
-                                      )}
-                                    </span>
-                                    <strong>{subHeading}</strong>
-                                  </Button>
-                                  <Collapse in={outerOpen}>
-                                    <div
-                                      id={`outer-collapse-content-${index}-${subIndex}`}
-                                      className="my-3"
-                                    >
-                                      {urlData.length > 0 &&
-                                        urlData.map(
-                                          (urlObj: any, innerIndex: number) => {
-                                            const innerKey =
-                                              Object.keys(urlObj)[0];
-
-                                            let { topic, link, status } =
-                                              urlObj[innerKey];
-                                            status =
-                                              parsed == null
-                                                ? status
-                                                : parsed[topic];
-                                            return (
-                                              <Card
-                                                className="border border-light p-4 mb-4"
-                                                key={innerIndex}
-                                              >
-                                                <Card.Title className=" fw-bold h5 mb-4">
-                                                  {topic}
-                                                </Card.Title>
-                                                <ul className="list-unstyled">
-                                                  <li>
-                                                    <Button className="my-4 btn btn-outline-light" variant="outline-light" >
-                                                      {link=="NO-URL" ? (<a href="" target="_blank">NO-URL available</a>) : (<a href={link} target="_blank">Solve</a>)}
-                                                      
-                                                    </Button>
-                                                    <br />
-                                                    <DropdownButton
-                                                    className="btn btn-outline-light"
-                                                      variant="dark"
-                                                      title={status}
-                                                    >
-                                                      <Dropdown.Item
-                                                        onClick={() => {
-                                                          status_click(
-                                                            "visited",
-                                                            index,
-                                                            subIndex,
-                                                            innerIndex,
-                                                            innerKey,
-                                                            topic
-                                                          );
-                                                        }}
-                                                      >
-                                                        Visited
-                                                      </Dropdown.Item>
-                                                      <Dropdown.Item
-                                                        onClick={() => {
-                                                          status_click(
-                                                            "unvisited",
-                                                            index,
-                                                            subIndex,
-                                                            innerIndex,
-                                                            innerKey,
-                                                            topic
-                                                          );
-                                                        }}
-                                                      >
-                                                        Unvisited
-                                                      </Dropdown.Item>
-                                                    </DropdownButton>
-                                                  </li>
-                                                </ul>
-                                              </Card>
-                                            );
-                                          }
-                                        )}
-                                    </div>
-                                  </Collapse>
-                                </div>
-                              );
-                            }
-                          )}
+                                                let { topic, link, status } =
+                                                  urlObj[innerKey];
+                                                status =
+                                                  parsed == null
+                                                    ? status
+                                                    : parsed[topic];
+                                                return (
+                                                  <Card
+                                                    className="border border-light p-4 mb-4"
+                                                    key={innerIndex}
+                                                  >
+                                                    <Card.Title className=" fw-bold h5 mb-4">
+                                                      {topic}
+                                                    </Card.Title>
+                                                    <ul className="list-unstyled">
+                                                      <li>
+                                                        <Button
+                                                          className="my-4 btn btn-outline-light"
+                                                          variant="outline-light"
+                                                        >
+                                                          {link == "NO-URL" ? (
+                                                            <a
+                                                              href=""
+                                                              target="_blank"
+                                                            >
+                                                              NO-URL available
+                                                            </a>
+                                                          ) : (
+                                                            <a
+                                                              href={link}
+                                                              target="_blank"
+                                                            >
+                                                              Solve
+                                                            </a>
+                                                          )}
+                                                        </Button>
+                                                        <br />
+                                                        <DropdownButton
+                                                          className="btn btn-outline-light"
+                                                          variant="dark"
+                                                          title={status}
+                                                        >
+                                                          <Dropdown.Item
+                                                            onClick={() => {
+                                                              status_click(
+                                                                "visited",
+                                                                index,
+                                                                subIndex,
+                                                                innerIndex,
+                                                                innerKey,
+                                                                topic
+                                                              );
+                                                            }}
+                                                          >
+                                                            Visited
+                                                          </Dropdown.Item>
+                                                          <Dropdown.Item
+                                                            onClick={() => {
+                                                              status_click(
+                                                                "unvisited",
+                                                                index,
+                                                                subIndex,
+                                                                innerIndex,
+                                                                innerKey,
+                                                                topic
+                                                              );
+                                                            }}
+                                                          >
+                                                            Unvisited
+                                                          </Dropdown.Item>
+                                                        </DropdownButton>
+                                                      </li>
+                                                    </ul>
+                                                  </Card>
+                                                );
+                                              }
+                                            )}
+                                        </Accordion.Body>
+                                      </Accordion>
+                                    );
+                                  }
+                                )}
+                            </Accordion.Body>
+                          </Accordion.Item>
+                        </Accordion>
                       </Card>
                     );
                   })}
