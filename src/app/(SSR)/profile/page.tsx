@@ -245,7 +245,7 @@ export default function ProfilePage() {
                                     const urlData: UrlData[] =
                                       urls[subIndex] || [];
                                     return (
-                                      <Accordion defaultActiveKey="0">
+                                      <Accordion defaultActiveKey="0" key={subIndex}>
                                         <Accordion.Header>
                                           {subHeading}
                                         </Accordion.Header>
