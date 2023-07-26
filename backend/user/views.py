@@ -12,18 +12,18 @@ import json
 import os
 from django.conf import settings
 import base64
-        
+
 class SignUp(APIView):
     def get(self,request):
         return Response('it works',status=200)
     def post(self, request):
-        
+
         fname = request.data['fname']
         lname = request.data['lname']
         username = request.data['username']
         email = request.data['email']
         password = request.data['password']
-        
+
         try:
             user = User.objects.get(username=username)
             return Response("Already signed up",status = 300)
@@ -32,41 +32,42 @@ class SignUp(APIView):
             user = User.objects.create_user(username,email,password)
             user.last_name = lname
             user.first_name = fname
-            
+
             user.save()
-            
+
             with open(os.path.join(settings.BASE_DIR, 'data_finally_links.json')) as f:
                  txt = f.read()
-            print(txt)     
+            print(txt)
             prefs = JsonHandler(username=username,data=json.loads(txt))
             prefs.save()
             return Response("sorted", status=200)
-                
-       
+
+
 class profile(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def get(self ,request):
-            
+
             token = request.META.get('HTTP_AUTHORIZATION', " ").split(' ')[1]
             data = {'token': token}
-        
+
             valid_data = TokenBackend(algorithm='HS256').decode(token,verify=False)
-        
+
             user = User.objects.get(username=request.user)
             prefs = JsonHandler.objects.get(username=request.user)
-            data = json.dumps(prefs.data["links"])
             
+           
+
             test = {
                  "username":user.username,
                  "email":user.email,
                  "fname":user.first_name,
                  "lname":user.last_name,
-                 "links":data
+                 "links":json.dumps(prefs.data)
             }
             return Response(json.dumps(test))
-    def patch(self,request):
-         data = json.loads(request.body.decode())
+    def post(self,request):
+
          prefs = JsonHandler.objects.get(username=request.user)
-         prefs.data = data
+         prefs.data = json.loads(request.data['links'])
          prefs.save()
          return Response("EMU AUTH")

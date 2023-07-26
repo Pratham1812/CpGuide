@@ -73,7 +73,7 @@ export default function ProfilePage() {
   const router = useRouter();
 
   const SaveClick = async () => {
-    const endpoint = "http://clasherrox.pythonanywhere.com/api/auth/profile";
+    const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
     const data = {
       username: userData?.username,
       links: userData?.links,
@@ -95,7 +95,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     const fetchProfileData = async () => {
-      const endpoint = "http://clasherrox.pythonanywhere.com/api/auth/profile";
+      const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
       const options = {
         method: "GET",
         headers: {
@@ -246,8 +246,6 @@ export default function ProfilePage() {
                                       urls[subIndex] || [];
                                     return (
                                       <Accordion defaultActiveKey="0" key={subIndex}>
-                          <Accordion.Item eventKey="{subIndex}">
-
                                         <Accordion.Header>
                                           {subHeading}
                                         </Accordion.Header>
@@ -268,8 +266,6 @@ export default function ProfilePage() {
                                                     ? status
                                                     : parsed[topic];
                                                 return (
-                          <Accordion.Item eventKey="{innerIndex}" key={innerIndex}>
-
                                                   <Card
                                                     className="border border-light p-4 mb-4"
                                                     key={innerIndex}
@@ -337,14 +333,10 @@ export default function ProfilePage() {
                                                       </li>
                                                     </ul>
                                                   </Card>
-                          </Accordion.Item>
-
                                                 );
                                               }
                                             )}
                                         </Accordion.Body>
-                          </Accordion.Item>
-
                                       </Accordion>
                                     );
                                   }
