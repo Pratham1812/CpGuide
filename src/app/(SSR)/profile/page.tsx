@@ -245,7 +245,9 @@ export default function ProfilePage() {
                                     const urlData: UrlData[] =
                                       urls[subIndex] || [];
                                     return (
-                                      <Accordion defaultActiveKey="0">
+                                      <Accordion defaultActiveKey="0" key={subIndex}>
+                          <Accordion.Item eventKey="{subIndex}">
+
                                         <Accordion.Header>
                                           {subHeading}
                                         </Accordion.Header>
@@ -266,6 +268,8 @@ export default function ProfilePage() {
                                                     ? status
                                                     : parsed[topic];
                                                 return (
+                          <Accordion.Item eventKey="{innerIndex}" key={innerIndex}>
+
                                                   <Card
                                                     className="border border-light p-4 mb-4"
                                                     key={innerIndex}
@@ -333,10 +337,14 @@ export default function ProfilePage() {
                                                       </li>
                                                     </ul>
                                                   </Card>
+                          </Accordion.Item>
+
                                                 );
                                               }
                                             )}
                                         </Accordion.Body>
+                          </Accordion.Item>
+
                                       </Accordion>
                                     );
                                   }
