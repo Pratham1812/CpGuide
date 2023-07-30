@@ -40,10 +40,10 @@ if(response.status == 400){
 }else if(response.status == 300){
     
     toast("you have already been registered, Login with your credentials")
-    setTimeout(()=>router.push("/"),1000)
+    setTimeout(()=>router.push("/login"),1000)
 }else{
     toast("you have been registered, Login with your credentials now")
-    setTimeout(()=>router.push("/"),1000)
+    setTimeout(()=>router.push("/login"),1000)
 
 }
 
