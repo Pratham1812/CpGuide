@@ -44,12 +44,27 @@ export default function NavBar() {
                 <Nav.Link as={Link} href="/login">
                   Login
                 </Nav.Link>
+                <Nav.Link as={Link} href="/about">
+                  About
+                </Nav.Link>
+
               </>
             )}
             {cookies["token"] && (
+              <>
+              <Nav.Link className="me-2" as={Link} href="/profile">
+               Profile
+              </Nav.Link>
+              
+              <Nav.Link className="me-2" as={Link} href="/about">
+               About
+              </Nav.Link>
               <Nav.Link className="me-2" as={Link} href="/logout">
                 Logout
               </Nav.Link>
+              </>
+              
+
             )}
           </Nav>
         </Navbar.Collapse>

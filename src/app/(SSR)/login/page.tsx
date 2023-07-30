@@ -1,6 +1,6 @@
 "use client"
 import { Form, } from 'react-bootstrap'
-
+import { AccountCircleOutlined, AlternateEmailOutlined, LockOutlined, PersonOutline } from '@mui/icons-material';
 import { useRouter } from 'next/navigation'
 import { NextRequest, NextResponse } from 'next/server'
 import { useCookies } from 'react-cookie'
@@ -22,7 +22,7 @@ export default async function Login() {
       }
 
       const JSONdata = JSON.stringify(data)
-      const endpoint = 'https://clasherrox.pythonanywhere.com/api/auth/login'
+      const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile"
       const options = {
         method: 'POST',
         headers: {
@@ -85,19 +85,19 @@ export default async function Login() {
               variant="outlined"
               margin="normal"
               required
-              InputProps={{ style: { color: '#E2E8F0' } }}
+              InputProps={{ startAdornment: <AccountCircleOutlined sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
               InputLabelProps={{ style: { color: '#E2E8F0' } }}
             />
             <TextField
               fullWidth
               label="Enter your Password"
               type="password"
-              placeholder=" Password"
+              placeholder="Password"
               name="password"
               variant="outlined"
               margin="normal"
               required
-              InputProps={{ style: { color: '#E2E8F0' } }}
+              InputProps={{ startAdornment: <LockOutlined sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
               InputLabelProps={{ style: { color: '#E2E8F0' } }}
             />
             <Button
@@ -106,18 +106,20 @@ export default async function Login() {
               type="submit"
               fullWidth
               sx={{
-                backgroundColor: '#4A5568',
+                backgroundColor: '#6B46C1',
                 color: '#E2E8F0',
                 padding: '12px',
                 '&:hover': {
-                  backgroundColor: '#2D3748',
+                  backgroundColor: '#805AD5',
+                  transform: 'scale(1.05)',
                 },
+                transition: 'transform 0.2s',
               }}
             >
-              Submit 
+              Submit
             </Button>
           </FormControl>
         </Box>
       </Box>
     );
-  };
+  }

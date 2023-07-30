@@ -8,6 +8,9 @@ import { Container,Form } from 'react-bootstrap'
 import React from 'react';
 import { Button, TextField, FormControl, Typography, Box } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { AccountCircleOutlined, AlternateEmailOutlined, LockOutlined, PersonOutline } from '@mui/icons-material';
+
+
 // import register_usr from './register_usr';?
 export default async function SignUp(){
     const router = useRouter()
@@ -23,7 +26,7 @@ export default async function SignUp(){
         }
     
     const JSONdata = JSON.stringify(data)
-    const endpoint = 'https://clasherrox.pythonanywhere.com/api/auth/signup'
+    const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
     const options = {method:'POST',
 headers:{
     'Content-Type':'application/json',
@@ -50,113 +53,113 @@ if(response.status == 400){
 
     }
 
-    return (
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: '100vh',
-            backgroundColor: '#1A202C',
-          }}
-        >
-          <Box
+   
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        backgroundColor: '#1A202C',
+      }}
+    >
+      <Box
+        sx={{
+          width: '90%',
+          maxWidth: 400,
+          padding: '40px',
+          borderRadius: '8px',
+          backgroundColor: '#2D3748',
+          marginTop: 'normal',
+          marginBottom: '100px', // Move the form higher
+        }}
+      >
+        <Typography variant="h5" gutterBottom style={{ color: '#E2E8F0', marginBottom: '20px' }}>
+          SignUp
+        </Typography>
+        <FormControl component="form" onSubmit={register_usr}>
+          <TextField
+            fullWidth
+            label="Enter your First Name"
+            type="text"
+            placeholder="First Name"
+            name="fname"
+            variant="outlined"
+            margin="normal"
+            required
+            InputProps={{ startAdornment: <PersonOutline sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
+            InputLabelProps={{ style: { color: '#E2E8F0' } }}
+          />
+          <TextField
+            fullWidth
+            label="Enter your Last Name"
+            type="text"
+            placeholder="Last Name"
+            name="lname"
+            variant="outlined"
+            margin="normal"
+            required
+            InputProps={{ startAdornment: <PersonOutline sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
+            InputLabelProps={{ style: { color: '#E2E8F0' } }}
+          />
+          <TextField
+            fullWidth
+            label="Enter your Email ID"
+            type="text"
+            placeholder="Email ID"
+            name="email"
+            variant="outlined"
+            margin="normal"
+            required
+            InputProps={{ startAdornment: <AlternateEmailOutlined sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
+            InputLabelProps={{ style: { color: '#E2E8F0' } }}
+          />
+          <TextField
+            fullWidth
+            label="Enter your Username"
+            type="text"
+            placeholder="Username"
+            name="username"
+            variant="outlined"
+            margin="normal"
+            required
+            InputProps={{ startAdornment: <AccountCircleOutlined sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
+            InputLabelProps={{ style: { color: '#E2E8F0' } }}
+          />
+          <TextField
+            fullWidth
+            label="Enter your Password"
+            type="password"
+            placeholder="Enter your password"
+            name="password"
+            variant="outlined"
+            margin="normal"
+            required
+            InputProps={{ startAdornment: <LockOutlined sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
+            InputLabelProps={{ style: { color: '#E2E8F0' } }}
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            fullWidth
             sx={{
-              width: '90%',
-              maxWidth: 400,
-              padding: '40px',
-              borderRadius: '8px',
-              backgroundColor: '#2D3748',
-              marginTop: 'normal',
-              marginBottom: '100px', // Move the form higher
+              backgroundColor: '#6B46C1',
+              color: '#E2E8F0',
+              padding: '12px',
+              '&:hover': {
+                backgroundColor: '#805AD5',
+                transform: 'scale(1.05)',
+              },
+              transition: 'transform 0.2s',
             }}
           >
-            <Typography variant="h5" gutterBottom style={{ color: '#E2E8F0', marginBottom: '20px' }}>
-              SignUp
-            </Typography>
-            <FormControl component="form" onSubmit={register_usr}>
-              <TextField
-                fullWidth
-                label="Enter you First Name"
-                type="text"
-                placeholder="First Name"
-                name="fname"
-                variant="outlined"
-                margin="normal"
-                required
-                InputProps={{ style: { color: '#E2E8F0' } }}
-                InputLabelProps={{ style: { color: '#E2E8F0' } }}
-              />
-              <TextField
-                fullWidth
-                label="Enter your Last Name"
-                type="text"
-                placeholder="Last Name"
-                name="lname"
-                variant="outlined"
-                margin="normal"
-                required
-                InputProps={{ style: { color: '#E2E8F0' } }}
-                InputLabelProps={{ style: { color: '#E2E8F0' } }}
-              />
-              
-              <TextField
-                fullWidth
-                label="Enter your Email ID"
-                type="text"
-                placeholder="Email ID"
-                name="email"
-                variant="outlined"
-                margin="normal"
-                required
-                InputProps={{ style: { color: '#E2E8F0' } }}
-                InputLabelProps={{ style: { color: '#E2E8F0' } }}
-              />
-              <TextField
-            
-                label="Enter your Username"
-                type="text"
-                placeholder="Username"
-                name="username"
-                variant="outlined"
-                margin="normal"
-                required
-                InputProps={{ style: { color: '#E2E8F0' } }}
-                InputLabelProps={{ style: { color: '#E2E8F0' } }}
-                
-              />
-              
-              <TextField
-                fullWidth
-                label="Enter your Password"
-                type="password"
-                placeholder="Enter your password"
-                name="password"
-                variant="outlined"
-                margin="normal"
-                required
-                InputProps={{ style: { color: '#E2E8F0' } }}
-                InputLabelProps={{ style: { color: '#E2E8F0' } }}
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                type="submit"
-                fullWidth
-                sx={{
-                  backgroundColor: '#4A5568',
-                  color: '#E2E8F0',
-                  padding: '12px',
-                  '&:hover': {
-                    backgroundColor: '#2D3748',
-                  },
-                }}
-              >
-              Login
-              </Button>
-            </FormControl>
-          </Box>
-        </Box>
-      );
-    };
+            Sign Up
+          </Button>
+        </FormControl>
+      </Box>
+    </Box>
+  );
+}

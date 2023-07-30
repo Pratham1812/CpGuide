@@ -5,7 +5,6 @@ import {
   Button,
   Spinner,
   Container,
-  Collapse,
   DropdownButton,
   Dropdown,
   Alert,
@@ -13,7 +12,6 @@ import {
 } from "react-bootstrap";
 import SaveIcon from "@mui/icons-material/Save";
 import Fab from "@mui/material/Fab";
-import Box from "@mui/material/Box";
 import { useCookies } from "react-cookie";
 import { toast } from "react-hot-toast";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
@@ -22,6 +20,7 @@ import data from "./data.json";
 import Tooltip from "@mui/material/Tooltip";
 import { useRouter } from "next/navigation";
 import { ElevatorSharp } from "@mui/icons-material";
+
 interface UserData {
   username: string;
   email: string;
@@ -41,6 +40,37 @@ interface StepData {
   sub_headings: string[];
   urls: any;
 }
+
+const styles = {
+  container: {
+    background: "#1a1a1a",
+    color: "#fff",
+    padding: "20px",
+  },
+  card: {
+    background: "#262626",
+    border: "1px solid #333",
+    marginBottom: "20px",
+    borderRadius: "8px",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+  },
+  button: {
+    background: "#007bff",
+    border: "none",
+    color: "#fff",
+    padding: "10px 15px",
+    cursor: "pointer",
+    fontSize: "16px",
+    borderRadius: "5px",
+    transition: "background 0.3s ease",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+  },
+  link: {
+    color: "#61dafb",
+    textDecoration: "none",
+  },
+};
+
 export default function ProfilePage() {
   const [cookies] = useCookies(["token"]);
   const [userData, setUserData] = useState<UserData | null>(null);
@@ -73,7 +103,7 @@ export default function ProfilePage() {
   const router = useRouter();
 
   const SaveClick = async () => {
-    const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
+    const endpoint ="https://clasherrox.pythonanywhere.com/api/auth/profile";
     const data = {
       username: userData?.username,
       links: userData?.links,
@@ -88,7 +118,7 @@ export default function ProfilePage() {
     };
     const response = await fetch(endpoint, options);
     if (response.ok) {
-      toast("your progress has been saved");
+      toast("Your progress has been saved");
       router.push("/profile");
     }
   };
@@ -155,7 +185,7 @@ export default function ProfilePage() {
       links: "",
     };
 
-    if (token == "visited") {
+    if (token === "visited") {
       copyData[index].urls[subIndex][innerIndex][innerKey].status = token;
 
       const copyParse = parsed;
@@ -168,7 +198,7 @@ export default function ProfilePage() {
       setUserData(userDataCopy);
 
       setStepData(copyData);
-    } else if (token == "unvisited") {
+    } else if (token === "unvisited") {
       copyData[index].urls[subIndex][innerIndex][innerKey].status = token;
 
       const copyParse = parsed;
@@ -185,11 +215,9 @@ export default function ProfilePage() {
 
   return (
     <center>
-      <Card className="p-4 bg-dark">
+      <Card style={styles.container}>
         <Card.Body>
-          <Card.Title className="mb-4  fw-bold display-4">
-            User Profile
-          </Card.Title>
+          <Card.Title className="mb-4 fw-bold display-4">User Profile</Card.Title>
 
           {loading ? (
             <div className="d-flex justify-content-center my-4">
@@ -200,10 +228,8 @@ export default function ProfilePage() {
           ) : (
             <Container>
               {userData && (
-                <Card className="border border-light p-4 mb-4">
-                  <Card.Title className=" fw-bold h5 mb-4">
-                    Profile Information
-                  </Card.Title>
+                <Card style={styles.card}>
+                  <Card.Title className="fw-bold h5 mb-4">Profile Information</Card.Title>
                   <ul className="list-unstyled">
                     <li>
                       <strong className="">First Name:</strong> {userData.fname}
@@ -218,11 +244,10 @@ export default function ProfilePage() {
                 </Card>
               )}
 
-              <Card className="border border-light p-4">
-                <Card.Title className=" fw-bold h5 mb-4">
+              <Card style={styles.card}>
+                <Card.Title className="fw-bold h5 mb-4">
                   <Alert key="primary" variant="primary">
-                    Save your progress before leaving by clicking the button in
-                    bottom right
+                    Save your progress before leaving by clicking the button in bottom right
                   </Alert>
                 </Card.Title>
                 {stepData.length > 0 &&
@@ -232,7 +257,7 @@ export default function ProfilePage() {
 
                     return (
                       <Card
-                        className="border border-light p-4 mb-4"
+                        style={styles.card}
                         key={index}
                       >
                         <Accordion defaultActiveKey="0">
@@ -267,22 +292,23 @@ export default function ProfilePage() {
                                                     : parsed[topic];
                                                 return (
                                                   <Card
-                                                    className="border border-light p-4 mb-4"
+                                                    style={styles.card}
                                                     key={innerIndex}
                                                   >
-                                                    <Card.Title className=" fw-bold h5 mb-4">
+                                                    <Card.Title className="fw-bold h5 mb-4">
                                                       {topic}
                                                     </Card.Title>
                                                     <ul className="list-unstyled">
                                                       <li>
                                                         <Button
-                                                          className="my-4 btn btn-outline-light"
+                                                          style={styles.button}
                                                           variant="outline-light"
                                                         >
-                                                          {link == "NO-URL" ? (
+                                                          {link === "NO-URL" ? (
                                                             <a
                                                               href=""
                                                               target="_blank"
+                                                              style={styles.link}
                                                             >
                                                               NO-URL available
                                                             </a>
@@ -290,6 +316,7 @@ export default function ProfilePage() {
                                                             <a
                                                               href={link}
                                                               target="_blank"
+                                                              style={styles.link}
                                                             >
                                                               Solve
                                                             </a>
@@ -297,7 +324,7 @@ export default function ProfilePage() {
                                                         </Button>
                                                         <br />
                                                         <DropdownButton
-                                                          className="btn btn-outline-light"
+                                                          style={styles.button}
                                                           variant="dark"
                                                           title={status}
                                                         >
