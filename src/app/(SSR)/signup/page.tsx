@@ -26,7 +26,7 @@ export default async function SignUp(){
         }
     
     const JSONdata = JSON.stringify(data)
-    const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
+    const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/signup";
     const options = {method:'POST',
 headers:{
     'Content-Type':'application/json',
