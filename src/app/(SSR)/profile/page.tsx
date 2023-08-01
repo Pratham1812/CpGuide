@@ -14,7 +14,6 @@ import SaveIcon from "@mui/icons-material/Save";
 import Fab from "@mui/material/Fab";
 import { useCookies } from "react-cookie";
 import { toast } from "react-hot-toast";
-import { FaAngleDown, FaAngleRight } from "react-icons/fa";
 import data from "./data.json";
 
 import Tooltip from "@mui/material/Tooltip";
@@ -103,7 +102,7 @@ export default function ProfilePage() {
   const router = useRouter();
 
   const SaveClick = async () => {
-    const endpoint ="https://clasherrox.pythonanywhere.com/api/auth/profile";
+    const endpoint ="http://localhost:8000/api/auth/profile";
     const data = {
       username: userData?.username,
       links: userData?.links,
@@ -125,7 +124,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     const fetchProfileData = async () => {
-      const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/profile";
+      const endpoint = "http://localhost:8000/api/auth/profile";
       const options = {
         method: "GET",
         headers: {

@@ -1,12 +1,10 @@
 "use client"
-import { Form, } from 'react-bootstrap'
-import { AccountCircleOutlined, AlternateEmailOutlined, LockOutlined, PersonOutline } from '@mui/icons-material';
+// import { Form, } from 'react-bootstrap'
+import { AccountCircleOutlined, LockOutlined } from '@mui/icons-material';
 import { useRouter } from 'next/navigation'
-import { NextRequest, NextResponse } from 'next/server'
 import { useCookies } from 'react-cookie'
 
 import { toast } from 'react-hot-toast'
-import delay from 'delay'
 import React from 'react';
     import { Button, TextField, FormControl, Typography, Box } from '@mui/material';
 
@@ -22,7 +20,7 @@ export default async function Login() {
       }
 
       const JSONdata = JSON.stringify(data)
-      const endpoint = "https://clasherrox.pythonanywhere.com/api/auth/login"
+      const endpoint = "http://localhost:8000/api/auth/login"
       const options = {
         method: 'POST',
         headers: {
@@ -72,7 +70,7 @@ export default async function Login() {
             marginBottom: '250px', // Move the form higher
           }}
         >
-          <Typography variant="h5" gutterBottom style={{ color: '#E2E8F0', marginBottom: '20px' }}>
+          <Typography variant="h5" gutterBottom style={{ color: '#E2E8F0', marginBottom: '20px' ,textAlign:'center'}}>
             Login
           </Typography>
           <FormControl component="form" onSubmit={login_handler}>
@@ -85,7 +83,7 @@ export default async function Login() {
               variant="outlined"
               margin="normal"
               required
-              InputProps={{ startAdornment: <AccountCircleOutlined sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
+              InputProps={{ style: { color: 'white'},startAdornment: <AccountCircleOutlined sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
               InputLabelProps={{ style: { color: '#E2E8F0' } }}
             />
             <TextField
@@ -97,7 +95,7 @@ export default async function Login() {
               variant="outlined"
               margin="normal"
               required
-              InputProps={{ startAdornment: <LockOutlined sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
+              InputProps={{ style: { color: 'white'},startAdornment: <LockOutlined sx={{ color: '#E2E8F0', marginRight: '8px' }} /> }}
               InputLabelProps={{ style: { color: '#E2E8F0' } }}
             />
             <Button
