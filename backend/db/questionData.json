@@ -3,16 +3,22 @@
         "model": "db.QuestionData",
         "pk": 1,
         "fields": {
-            "question_id": 1,
-            "question": "Question 1"
+            "topic_id": "11A",
+            "heading" : "Step 1: Learn the basics",
+            "sub_heading" :"Step 1.1: Things to Know in C++/Java/Python or any language",
+            "topic": "User Input / Output",
+            "link": "https://practice.geeksforgeeks.org/problems/search-query-auto-complete/0?category%5B%5D=Strings&amp;category%5B%5D=Strings&amp;problemStatus=unsolved&amp;difficulty%5B%5D=2&amp;page=1&amp;query=category%5B%5DStringsproblemStatusunsolveddifficulty%5B%5D2page1category%5B%5DSt"
         }
     },
     {
         "model": "db.QuestionData",
         "pk": 2,
         "fields": {
-            "question_id": 2,
-            "question": "Question 2"
+            "topic_id": "11B",
+            "heading" : "Step 1: Learn the basics",
+            "sub_heading" :"Step 1.1: Things to Know in C++/Java/Python or any language",
+            "topic": "Data Types",
+            "link": "https://bit.ly/3Dqmgvx"
         }
     }
 ]
