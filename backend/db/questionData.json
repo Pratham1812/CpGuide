@@ -1,0 +1,18 @@
+[
+    {
+        "model": "db.QuestionData",
+        "pk": 1,
+        "fields": {
+            "question_id": 1,
+            "question": "Question 1"
+        }
+    },
+    {
+        "model": "db.QuestionData",
+        "pk": 2,
+        "fields": {
+            "question_id": 2,
+            "question": "Question 2"
+        }
+    }
+]
