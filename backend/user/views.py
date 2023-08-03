@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 from .serializers import UserSerializer
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.backends import TokenBackend
-from .models import JsonHandler
+from db.models import UserProfile, QuestionData
 import json
 import os
 from django.conf import settings
@@ -35,11 +35,7 @@ class SignUp(APIView):
 
             user.save()
 
-            with open(os.path.join(settings.BASE_DIR, 'data_finally_links.json')) as f:
-                 txt = f.read()
-            print(txt)
-            prefs = JsonHandler(username=username,data=json.loads(txt))
-            prefs.save()
+            
             return Response("sorted", status=200)
 
 
@@ -53,21 +49,33 @@ class profile(APIView):
             valid_data = TokenBackend(algorithm='HS256').decode(token,verify=False)
 
             user = User.objects.get(username=request.user)
-            prefs = JsonHandler.objects.get(username=request.user)
-            
            
-
-            test = {
-                 "username":user.username,
-                 "email":user.email,
-                 "fname":user.first_name,
-                 "lname":user.last_name,
-                 "links":json.dumps(prefs.data)
-            }
-            return Response(json.dumps(test))
+            profile_data = {
+            "username": user.username,
+            "email": user.email,
+            "fname": user.first_name,
+            "lname": user.last_name,
+        }
+            return Response(json.dumps(profile_data))
     def post(self,request):
+         
+        topic_id = request.data['topic_id'] 
 
-         prefs = JsonHandler.objects.get(username=request.user)
-         prefs.data = json.loads(request.data['links'])
-         prefs.save()
-         return Response("EMU AUTH")
+        if topic_id:
+            user = request.user
+            question_data = QuestionData.objects.get(topic_id=topic_id)
+
+            try:
+                check = UserProfile.objects.get(user=user, topicId = question_data.topic_id)
+                print(check)
+                return Response("aleady exists" , status=304)
+
+            except UserProfile.DoesNotExist:
+                UserProfile.objects.create(user=user, topicId = question_data.topic_id)
+
+
+            
+
+            
+            
+        return Response("EMU AUTH")

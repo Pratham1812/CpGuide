@@ -103,17 +103,13 @@ export default function ProfilePage() {
 
   const SaveClick = async () => {
     const endpoint ="http://localhost:8000/api/auth/profile";
-    const data = {
-      username: userData?.username,
-      links: userData?.links,
-    };
     const options = {
       method: "POST",
       headers: {
         Authorization: "Bearer " + cookies["token"],
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({topic_id : "11B"}),   //this needs to be modified later
     };
     const response = await fetch(endpoint, options);
     if (response.ok) {
@@ -214,6 +210,7 @@ export default function ProfilePage() {
 
   return (
     <center>
+      <button onClick={SaveClick}> test me </button>
       <Card style={styles.container}>
         <Card.Body>
           <Card.Title className="mb-4 fw-bold display-4">User Profile</Card.Title>
